@@ -32,4 +32,4 @@
 
 - Sebastian Post
 
-- Veronica Bergström
+- Veronica Bergström 
