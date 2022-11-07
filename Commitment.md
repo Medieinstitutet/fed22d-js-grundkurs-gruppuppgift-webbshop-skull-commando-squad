@@ -28,6 +28,8 @@
 
 # underskivet av
 
--Robin Sevelin
+- Robin Sevelin
 
 - Sebastian Post
+
+- Veronica Bergström
