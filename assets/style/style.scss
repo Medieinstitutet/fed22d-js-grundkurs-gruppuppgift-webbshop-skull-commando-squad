@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,7 +9,16 @@ body {
   margin: 0;
 }
 
+#goda-munkar,
+#kött-munkar,
+#växt-munkar {
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+}
+
 header {
+  border: 1px solid black;
+  position: fixed;
   text-align: center;
   width: 100vw;
   height: 100px;
@@ -19,6 +26,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.varukorg {
+  font-size: 2rem;
 }
 
 nav {
