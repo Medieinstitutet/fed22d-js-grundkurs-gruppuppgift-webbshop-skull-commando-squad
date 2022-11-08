@@ -5,25 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gottfrids munkfabrik</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <contentwrapper>
       <header><h1>Gottfrids munkfabrik - catchig slogan?</h1></header>
-      <nav>
+      <nav class="varukorg-nav">
         <ul>
-          <li>Goda Munkar</li>
-          <li>Köttmunkar</li>
-          <li>Växtbaserade</li>
+          <li>
+            <a href="#" class="varukorg"
+              ><i class="fa fa-shopping-cart" aria-hidden="true"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="munk-kategorier">
+        <ul>
+          <li><a href="#" class="goda-munkar">Goda Munkar</a></li>
+          <li><a href="#" class="meat-donuts">Kött munkar</a></li>
+          <li><a href="#" class="green-donuts">Växtbaserade</a></li>
         </ul>
       </nav>
       <main>
-        <article>
-          <h2>Munk 1</h2>
-        </article>
-        <article>
-          <h2>Munk 1</h2>
-        </article>
+        <section class="goda-munkar">
+          <h2>Goda munkar</h2>
+          <article>
+            <h3>Choklad</h3>
+          </article>
+          <article>
+            <h3>Jordgubbe</h3>
+          </article>
+          <article>
+            <h3>Vanilj</h3>
+          </article>
+          <article>
+            <h3>Kola</h3>
+          </article>
+        </section>
+
+        <section class="kött-munkar">
+          <h2>Kött munkar</h2>
+          <article>
+            <h3>Bacon</h3>
+          </article>
+          <article>
+            <h3>Entrecote</h3>
+          </article>
+          <article>
+            <h3>Kyckling</h3>
+          </article>
+          <article>
+            <h3>Pulled Beef</h3>
+          </article>
+        </section>
+
+        <section class="växt-munkar">
+          <h2>Växt munkar</h2>
+          <article>
+            <h3>Krasse</h3>
+          </article>
+          <article>
+            <h3>Maskros</h3>
+          </article>
+          <article>
+            <h3>Tång</h3>
+          </article>
+          <article>
+            <h3>Majs</h3>
+          </article>
+        </section>
       </main>
       <script src="script.js"></script>
     </contentwrapper>
