@@ -1,0 +1,30 @@
+body {
+  background: black;
+  color: white;
+}
+
+.formsWrapper {
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+}
+
+input[type="reset"] {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  background-color: green;
+  border: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
