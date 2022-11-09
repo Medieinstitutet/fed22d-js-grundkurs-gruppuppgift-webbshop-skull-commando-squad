@@ -18,7 +18,6 @@ body {
 }
 
 header {
-  border: 1px solid black;
   position: fixed;
   text-align: center;
   width: 100%;
@@ -27,7 +26,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  .gottfrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 100px;
+  }
 }
 
 .varukorg {
@@ -46,8 +52,6 @@ a {
 main {
   padding: 10px;
   width: 100vw;
-  justify-items: space-evenly;
-  flex-direction: row;
 }
 
 .contentwrapper {
