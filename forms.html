@@ -10,37 +10,64 @@
   <body>
     <div class="formsWrapper">
       <form>
+        <!---Formulär-->
         <label for="fname">Förnamn:</label>
-        <input type="text" id="fname" name="fname" value="Förnamn" /><br />
+        <input type="text" id="fname" name="fname" placeholder="Förnamn" />
         <label for="lname">Efternamn:</label>
-        <input type="text" id="lname" name="lname" value="Efternamn" />
-        <br />
+        <input type="text" id="lname" name="lname" placeholder="Efternamn" />
         <label for="adress">Adress</label>
-        <input type="text" id="adress" name="adress" value="Adress" /><br />
+        <input type="text" id="adress" name="adresse" placeholder="Adress" />
         <label for="postnummer">Postnummer</label>
         <input
           type="text"
           id="postnummer"
-          name="postnummer"
-          value="Postnummer"
-        /><br />
+          name="zipcode"
+          placeholder="Postnummer"
+        />
         <label for="stad">Stad</label>
-        <input type="text" id="stad" name="stad" value="Stad" /><br />
+        <input type="text" id="stad" name="city" placeholder="Stad" />
         <label for="phone">Telefonnummer:</label>
         <input
           type="tel"
           id="phone"
           name="phone"
-          value="07XXXXXXXX"
+          placeholder="07XXXXXXXX"
           required
           minlength="10"
           maxlength="12"
         />
-        <br />
         <label for="email">E-post:</label>
-        <input type="email" id="email" value="E-post" /><br /><br />
+        <input type="email" id="email" placeholder="E-post" />
+        <input
+          type="radio"
+          id="card"
+          name="payMethod"
+          value="Kort"
+          class="cardButton"
+        />
+        <label for="card">Kort</label>
+        <!---- Kortdetaljer. Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
+        <div class="cardDetails">
+          <label for="cardNumber">Kortnummer</label>
+          <input type="text" id="cardNumber name="ccInfo"
+          placeholder="Kortnummer">
+          <label for="cardNumber">Giltighetstid</label>
+          <input
+            type="text"
+            id="yearMonth"
+            name="ccInfo"
+            placeholder="År/månad"
+          />
+          <label for="cardNumber">CCV</label>
+          <input type="text" id="cardNumber name="ccInfo"
+          placeholder="Kortnummer" min="3" max="3" required>
+        </div>
+        <br />
+        <!---Fortsättning på formuläret som är synligt-->
+        <input type="radio" id="invoice" name="payMethod" value="Faktura" />
+        <label for="invoice">Faktura</label><br /><br />
         <label for="reklam">Vill du prenumerera på vårt nyhetsbrev?</label>
-        <input type="checkbox" id="reklam" name="reklam" checked /><br />
+        <input type="checkbox" id="reklam" name="newsLetter" checked /><br />
         <label for="usage"
           >Klicka här för att godkänna <a href="#">användarvillkoren</a></label
         >
