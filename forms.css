@@ -9,6 +9,7 @@ body {
   padding: 10px;
   height: 100%;
   border: 1px solid black;
+  margin: auto;
 }
 
 .formsWrapper .cardDetails {
