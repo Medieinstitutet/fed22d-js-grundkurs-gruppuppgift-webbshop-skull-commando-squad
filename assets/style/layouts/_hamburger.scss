@@ -1,23 +1,23 @@
-.munk-nav {
+.donut-nav {
   min-height: 50px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
 }
 
-.munk-nav-menu {
+.donut-nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 
-.munk-link {
+.donut-link {
   color: black;
   transition: 0.3s ease;
 }
 
-.munk-link:hover {
+.donut-link:hover {
   color: hotpink;
 }
 
@@ -52,7 +52,7 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .munk-nav-menu {
+  .donut-nav-menu {
     position: fixed;
     left: -100%;
     top: 80px;
@@ -64,7 +64,7 @@
     background-color: white;
   }
 
-  .munk-nav-menu.active {
+  .donut-nav-menu.active {
     left: 0;
   }
 }
