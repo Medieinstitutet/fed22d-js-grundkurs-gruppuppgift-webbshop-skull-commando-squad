@@ -52,9 +52,17 @@ main {
 }
 
 article {
-  padding: 10px;
-  border: 1px solid black;
-  width: 100%;
-  height: 200px;
-  background-color: white;
+  box-sizing: border-box;
+}
+
+img {
+  width: 200px;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-card button {
+  margin-top: 10px;
 }
