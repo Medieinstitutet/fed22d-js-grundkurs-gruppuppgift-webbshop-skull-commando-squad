@@ -10,8 +10,8 @@ body {
 #meat-donuts,
 #plant-based-donuts,
 .form {
-  min-height: calc(100vh - 100px);
-  padding-top: 100px;
+  min-height: calc(100vh - 120px);
+  padding-top: 120px;
 }
 
 header {
@@ -30,6 +30,22 @@ header {
     align-items: center;
     width: 250px;
     height: 100px;
+  }
+}
+
+.filter-buttons {
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
   }
 }
 
