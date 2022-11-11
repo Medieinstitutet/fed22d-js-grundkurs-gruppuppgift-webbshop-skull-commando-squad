@@ -12,8 +12,7 @@ body {
 
 #tasty-donuts,
 #meat-donuts,
-#plant-based-donuts,
-.form {
+#plant-based-donuts {
   min-height: calc(100vh - 120px);
   padding-top: 120px;
 }
@@ -53,11 +52,6 @@ header {
   }
 }
 
-.shopping-cart {
-  font-size: 2rem;
-  color: black;
-}
-
 li {
   list-style: none;
 }
@@ -80,7 +74,10 @@ img {
 }
 
 .product-card {
-  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
 }
 
 .product-card button {

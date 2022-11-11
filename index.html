@@ -16,17 +16,39 @@
       <div class="gottfrid">
         <h1>Gottfrids munkshop</h1>
       </div>
-      <!--varukorg start-->
-      <nav class="shopping-cart-nav">
-        <ul>
-          <li>
-            <a href="#" class="shopping-cart"
-              ><span class="fa fa-shopping-cart" aria-hidden="true"></span
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <!--varukorg ends-->
+      <!--shopping-cart start-->
+            <button class="shopping-cart" aria-label="shopping-cart-button">
+              <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+            </button>
+      <section class="shopping-cart-menu">
+        <header class="shopping-cart-header">
+          <h2>Varukorg</h2>
+          <span>kundsupport: 08-634 30 30</span>
+        </header>
+        <section class="product">
+          <section class="product-img">
+              <h3>Produkt</h3>
+              <label>munkNamn</label>
+              <label>Beskrivning av munk</label>
+            </section>
+            <section class="quantity">
+              <h3>Antal</h3>
+              <button>-</button>
+              <input type="number">
+              <button>+</button>
+            </section>
+            <section class="single-price">
+              <h3>Styckpris</h3>
+              <input type="number">
+            </section>
+            <section class="subttotal-price">
+              <h3>Delsumma</h3>
+              <input type="number">
+            </section>
+          </section>
+        </section>
+      </section>
+      <!--shopping-cart ends-->
       <!--hamburger start-->
       <nav class="donut-nav">
         <ul class="donut-nav-menu">
@@ -42,7 +64,7 @@
             >
           </li>
         </ul>
-        <button class="hamburger">
+        <button class="hamburger" aria-label="menu-button" tabindex="3">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -61,60 +83,256 @@
     <main>
       <section id="tasty-donuts">
         <h2>Goda munkar</h2>
-
         <article class="product-card">
-          <img src="assets/img/Chocolate-1.png" alt="" />
-          <h3>Chokladmunk</h3>
-          <p>beskrivning</p>
-          <div>pris och rating</div>
-          <div>
-            <button>Antal</button>
-            <button>Lägg i varukorg</button>
-          </div>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Chokladmunk</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Jordgubbe</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Jorgubbe</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Vanilj</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Vanilj</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Kola</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Kola</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
       </section>
 
       <section id="meat-donuts">
         <h2>Kött munkar</h2>
         <article class="product-card">
-          <h3>Bacon</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Bacon</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Entrecote</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Ribeye</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Kyckling</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Crispy chicken</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Pulled Beef</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Pulled Beef</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
       </section>
 
       <section id="plant-based-donuts">
         <h2>Växtbaserade munkar</h2>
-        <article>
-          <h3>Krasse</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Krasse</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
-        <article>
-          <h3>Maskros</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Maskros</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
-        <article>
-          <h3>Tång</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Tång</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
-        <article>
-          <h3>Majs</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Corn hole</h3>
+            <p>beskrivning</p>
+            <div>pris och rating</div>
+            <div>
+              <button>Antal</button>
+              <button>Lägg i varukorg</button>
+            </div>
+          </section>
         </article>
       </section>
     </main>
