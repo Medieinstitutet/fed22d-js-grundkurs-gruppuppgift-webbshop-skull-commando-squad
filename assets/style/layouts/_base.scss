@@ -83,3 +83,24 @@ img {
 .product-card button {
   margin-top: 10px;
 }
+
+.donut-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-button {
+  padding: 10px;
+
+  button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+  }
+  button:hover {
+    outline: 1px solid palevioletred;
+  }
+}
