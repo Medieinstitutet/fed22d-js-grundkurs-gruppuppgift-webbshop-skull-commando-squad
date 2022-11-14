@@ -35,8 +35,6 @@ shoppingCart.addEventListener("click", () => {
 
 // shoppingcart meny end //
 
-// add-to-cart buttons start //
-
 // funktion för minus och plusknappen
 const decbtns = document.querySelectorAll('button[data-operator="minus"]');
 const addbtns = document.querySelectorAll('button[data-operator="plus"]');

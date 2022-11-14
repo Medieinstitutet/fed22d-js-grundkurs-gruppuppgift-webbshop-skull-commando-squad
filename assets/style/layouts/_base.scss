@@ -89,6 +89,12 @@ img {
   display: flex;
   flex-direction: column;
   width: 220px;
+  .amount::after {
+    content: " st";
+  }
+  .sum::after {
+    content: " kr";
+  }
 }
 
 .shopping-button {
