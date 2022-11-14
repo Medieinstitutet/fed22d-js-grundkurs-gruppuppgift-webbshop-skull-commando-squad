@@ -1,7 +1,3 @@
-const hejHej = "Hallå!";
-
-console.log(hejHej);
-
 const hamburger = document.querySelector(".hamburger"); // deklarerar en hamburger variabel
 const navMenu = document.querySelector(".donut-nav-menu"); // deklarerar en menu variabel
 
@@ -18,3 +14,13 @@ document.querySelectorAll(".nav-link").forEach((n) =>
     navMenu.classList.remove("active");
   })
 );
+
+// deklarerar en shopping-cart variabel
+const shoppingCart = document.querySelector(".shopping-cart");
+const shoppingCartMenu = document.querySelector(".shopping-cart-menu");
+
+// skapar en klick funktion till shopping-cart menu för att aktiveras
+shoppingCart.addEventListener("click", () => {
+  shoppingCart.classList.toggle("active");
+  shoppingCartMenu.classList.toggle("active");
+});

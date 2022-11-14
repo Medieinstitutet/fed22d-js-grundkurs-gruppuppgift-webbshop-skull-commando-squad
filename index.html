@@ -16,17 +16,31 @@
       <div class="gottfrid">
         <h1>Gottfrids munkshop</h1>
       </div>
-      <!--varukorg start-->
-      <nav class="shopping-cart-nav">
-        <ul>
-          <li>
-            <a href="#" class="shopping-cart"
-              ><span class="fa fa-shopping-cart" aria-hidden="true"></span
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <!--varukorg ends-->
+      <!--shopping-cart start-->
+            <button class="shopping-cart" aria-label="shopping-cart-button">
+              <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+              <span class="total-price">0 kr</span>
+            </button>
+      <section class="shopping-cart-menu">
+        <header class="shopping-cart-header">
+          <h2>Varukorg</h2>
+          <span>kundsupport: 08-634 30 30</span>
+        </header>
+        <section class="product">
+              <h3>Produkt</h3>
+            </section>
+            <section class="quantity">
+              <h3>Antal</h3>
+            </section>
+            <section class="single-price">
+              <h3>Styckpris</h3>
+            </section>
+            <section class="subttotal-price">
+              <h3>Delsumma</h3>
+            </section>
+        </section>
+      </section>
+      <!--shopping-cart ends-->
       <!--hamburger start-->
       <nav class="donut-nav">
         <ul class="donut-nav-menu">
@@ -42,7 +56,7 @@
             >
           </li>
         </ul>
-        <button class="hamburger">
+        <button class="hamburger" aria-label="menu-button" tabindex="3">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -50,63 +64,351 @@
       </nav>
       <!--hamburger ends-->
     </header>
+    <!--filter buttons start-->
+    <section class="filter-buttons">
+      <button><span class="fa fa-star"></span></button>
+      <button>
+        <span class="fa fa-arrow-up"></span>
+        <span class="fa fa-arrow-down"></span>
+        a-z
+      </button>
+      <button>
+        <span class="fa fa-arrow-up"></span>
+        <span class="fa fa-arrow-down"></span>
+        1-9
+      </button>
+      <button><span class="fa fa-filter"></span></button>
+    </section>
+    <!--filter buttons end-->
     <main>
       <section id="tasty-donuts">
         <h2>Goda munkar</h2>
-
         <article class="product-card">
-          <img src="assets/img/Chocolate-1.png" alt="" />
-          <h3>Chokladmunk</h3>
-          <p>beskrivning</p>
-          <div>pris och rating</div>
-          <div>
-            <button>Antal</button>
-            <button>Lägg i varukorg</button>
-          </div>
+          <section class="donut-img">
+            <img
+            src="assets/img/Chocolate-1.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Sexy chocolate - 15 kr</h3>
+            <span>Smak av choklad</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Jordgubbe</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/strawberry.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Strawberry Splash - 25 kr</h3>
+            <span>Smak av jordgubb</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Vanilj</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/vanilla-ice.png"
+            alt="vanilla-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Vanilla Ice - 20 kr</h3>
+            <span>Smak av vanilj</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
 
         <article class="product-card">
-          <h3>Kola</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/salted-caramell.png"
+            alt="salted-caramell-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Salted Caramell - 30 kr</h3>
+            <span>Smak av kola</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
       </section>
 
       <section id="meat-donuts">
         <h2>Kött munkar</h2>
         <article class="product-card">
-          <h3>Bacon</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/bacon.PNG"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>American breakfast - 25 kr</h3>
+            <span>Smak av bacon och annat gott</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Entrecote</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/rib-eye.PNG"
+            alt="rib-eye-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Bloody bastard - 30 kr</h3>
+            <span>Smak av entrecote och strössel</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Kyckling</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/chicken.PNG"
+            alt="chicken-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Crispy chicken - 15 kr</h3>
+            <span>Smak av frasig kyckling</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
         <article class="product-card">
-          <h3>Pulled Beef</h3>
+          <section class="donut-img">
+            <img
+            src="assets/img/pulled-beef.PNG"
+            alt="pulled-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Pulled Beef - 55 kr</h3>
+            <span>Rökig och trådig</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
         </article>
       </section>
 
       <section id="plant-based-donuts">
         <h2>Växtbaserade munkar</h2>
-        <article>
-          <h3>Krasse</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/water-cress.png"
+            alt="water-cress-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Water Cress - 5 kr</h3>
+            <span>Smak av krasse</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
-        <article>
-          <h3>Maskros</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/dandelion.png"
+            alt="dandelion-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Dandelion - 15 kr</h3>
+            <span>Smak av sommar och gräs</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
-        <article>
-          <h3>Tång</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/sea-weed.png"
+            alt="chocolate-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Sea Weed - 20 kr</h3>
+            <span>Smak av salt och umammi</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
-        <article>
-          <h3>Majs</h3>
+        <article class="product-card">
+          <section class="donut-img">
+            <img
+            src="assets/img/corn-hole.PNG"
+            alt="corn-donut"
+            loading="lazy"
+            width="200px"
+            height="200px"
+          />
+          </section>
+          <section class="donut-info">
+            <h3>Corn hole - 100 kr</h3>
+            <span>Smak av majs och plast</span>
+            <span>0 st</span>
+            <span>0 kr</span>
+            <section class="shopping-button">
+              <button>-</button>
+              <button>+</button>
+            </section>
+            <section class="rating">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </section>
+          </section>
         </article>
       </section>
     </main>

@@ -1,0 +1,30 @@
+.shopping-cart {
+  font-size: 1.6rem;
+  color: black;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.shopping-cart-menu {
+  padding-top: 50px;
+  position: fixed;
+  top: 120px;
+  width: 100%;
+  transition: 0.5s;
+  left: -200%;
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  .shopping-cart-header {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    justify-content: space-evenly;
+  }
+}
+
+.shopping-cart-menu.active {
+  left: 0;
+}

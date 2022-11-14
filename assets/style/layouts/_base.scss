@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: hotpink;
   display: flex;
@@ -8,10 +12,9 @@ body {
 
 #tasty-donuts,
 #meat-donuts,
-#plant-based-donuts,
-.form {
-  min-height: calc(100vh - 100px);
-  padding-top: 100px;
+#plant-based-donuts {
+  min-height: calc(100vh - 120px);
+  padding-top: 120px;
 }
 
 header {
@@ -33,9 +36,20 @@ header {
   }
 }
 
-.shopping-cart {
-  font-size: 2rem;
-  color: black;
+.filter-buttons {
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  }
 }
 
 li {
@@ -60,9 +74,34 @@ img {
 }
 
 .product-card {
-  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
 }
 
 .product-card button {
   margin-top: 10px;
+}
+
+.donut-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.shopping-button {
+  padding: 10px;
+
+  button {
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+  }
+  button:hover {
+    outline: 1px solid palevioletred;
+  }
 }
