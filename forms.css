@@ -14,9 +14,11 @@ body {
 
 .formsWrapper .cardDetails {
   display: none;
-  /*Sparar till JS.
+}
+
+.visible {
   display: flex;
-  flex-direction: column;*/
+  flex-direction: column;
 }
 
 a:visited {

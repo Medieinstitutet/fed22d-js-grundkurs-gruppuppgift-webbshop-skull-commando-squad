@@ -46,12 +46,12 @@
           name="payMethod"
           value="Kort"
           class="cardButton"
-        />
+                  />
         <label for="card">Kort</label>
         <!---- Kortdetaljer. Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
-        <div class="cardDetails">
+        <div class="cardDetails" id="cardDetails">
           <label for="cardNumber">Kortnummer:</label>
-          <input type="text" id="cardNumber name="ccInfo"
+          <input type="text" id="cardNumber" name="ccInfo"
           placeholder="Kortnummer">
           <label for="cardNumber">Giltighetstid:</label>
           <input
@@ -61,8 +61,8 @@
             placeholder="År/månad"
           />
           <label for="cardNumber">CCV:</label>
-          <input type="text" id="cardNumber name="ccInfo"
-          placeholder="Kortnummer" min="3" max="3" required>
+          <input type="text" id="cardNumber" name="ccInfo"
+          placeholder="Kortnummer" min="3" max="3">
         </div>
         <br />
         <!---Fortsättning på formuläret som är synligt-->

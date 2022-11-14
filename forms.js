@@ -1,23 +1,27 @@
-let cardChecked = false;
-let btn;
+const cardRadio = document.querySelector("#cardRadio")
+const cardDetailElem = document.getElementById("cardDetails")
+cardRadio.addEventListener('click', cardOr);
+const invoce = document.querySelector("#invoice")
+invoce.addEventListener('click', orInvoice);
 
-
-
-function isCardChecked(){
-    if (cardRadio.checked = true) {
-        console.log('Hej');   
+function cardOr() {
+    if (true) {
+        console.log('kort'); 
+        document.getElementById("cardDetails").style.display = "flex";
+        document.getElementById("cardDetails").style.flexDirection = "column";
+    }else{
+        console.log('faktura'); 
+        document.getElementById("cardDetails").style.display = "none";
+        document.getElementById("cardDetails").style.flexDirection = "column";
     }
-    else{
-        console.log('Hej då')
-    }
+
+
 }
 
-isCardChecked();
-
-let sum = 50;
-
-if (sum = 50) {
-    console.log('ldfsajgnbljkdösg');
-} else {
-    
+function orInvoice() {
+    if (true) {
+        console.log('faktura'); 
+        document.getElementById("cardDetails").style.display = "none";
+        document.getElementById("cardDetails").style.flexDirection = "column";
+    }
 }
