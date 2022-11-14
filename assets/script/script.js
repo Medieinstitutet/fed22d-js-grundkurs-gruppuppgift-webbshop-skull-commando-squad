@@ -34,3 +34,41 @@ shoppingCart.addEventListener("click", () => {
 });
 
 // shoppingcart meny end //
+
+// add-to-cart buttons start //
+
+// funktion för minus och plusknappen
+const decbtns = document.querySelectorAll('button[data-operator="minus"]');
+const addbtns = document.querySelectorAll('button[data-operator="plus"]');
+
+for (let i = 0; i < decbtns.length; i++) {
+  decbtns[i].addEventListener("click", decreaseCount);
+  addbtns[i].addEventListener("click", increaseCount);
+}
+
+function decreaseCount(e) {
+  const amountEl =
+    e.currentTarget.parentElement.parentElement.querySelector(".amount");
+  let amount = amountEl.innerText;
+
+  if (amount - 1 < 0) {
+    return;
+  }
+  amountEl.innerHTML = amount - 1;
+  const sumEl =
+    e.currentTarget.parentElement.parentElement.querySelector(".sum");
+  const price = 15;
+  sumEl.innerHTML = (amount - 1) * price;
+}
+
+function increaseCount(e) {
+  const amountEl =
+    e.currentTarget.parentElement.parentElement.querySelector(".amount");
+  let amount = Number(amountEl.innerText);
+  let newAmount = amount + 1;
+  amountEl.innerHTML = newAmount;
+  const sumEl =
+    e.currentTarget.parentElement.parentElement.querySelector(".sum");
+  const price = 15;
+  sumEl.innerHTML = newAmount * price;
+}
