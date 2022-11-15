@@ -6,18 +6,12 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".donut-nav-menu");
 
 // skapar en klick funktion till hamburger och menu för att aktiveras
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("click", openMenu);
+
+function openMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
-});
-
-// skapar en funktion för alla nav items för att ta bort aktivering
-document.querySelectorAll(".nav-link").forEach((n) =>
-  navMenu.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  })
-);
+}
 
 // hamburgar meny end //
 
