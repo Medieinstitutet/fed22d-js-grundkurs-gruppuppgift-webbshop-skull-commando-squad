@@ -8,7 +8,6 @@ Extra för formuläret:
 
 To do:
 
-- fält för rabattkod
 - knappen beställ ska skapa en sammanställning med alla rabatter
 - rabattlogiken, är den på knappen beställ?
 - leveransbekräftelse (alert?)
