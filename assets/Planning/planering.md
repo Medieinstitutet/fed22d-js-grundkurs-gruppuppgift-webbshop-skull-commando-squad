@@ -20,6 +20,6 @@ Kött munkar
 Växtbaserade munkar
 
 - krasse
-- Dandelion
-- Seaweed
-- Candy Corn
+- maskros
+- Sjögräs
+- Majs
