@@ -10,13 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-#tasty-donuts,
-#meat-donuts,
-#plant-based-donuts {
-  min-height: calc(100vh - 120px);
-  padding-top: 200px;
-}
-
 header {
   position: fixed;
   text-align: center;
@@ -66,39 +59,30 @@ main {
   margin: auto;
 }
 
-article {
-  box-sizing: border-box;
-}
-
 img {
-  width: 200px;
+  border: 1px solid black;
 }
 
 .donutContainer {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  max-width: 600px;
+  max-width: 920px;
   margin: auto;
   align-items: center;
+  margin-top: 200px;
 }
 
-.product-card button {
-  margin-top: 10px;
+.donut {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 .donut-info {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 220px;
-  .amount::after {
-    content: " st";
-  }
-  .sum::after {
-    content: " kr";
-  }
+  width: 200px;
+  border: 1px solid black;
 }
 
 .shopping-button {
