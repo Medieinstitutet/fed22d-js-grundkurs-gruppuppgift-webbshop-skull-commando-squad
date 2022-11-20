@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -77,10 +78,11 @@ img {
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 40px;
 }
 
 .donut-info {
+  padding: 10px;
   width: 200px;
   border: 1px solid black;
 }

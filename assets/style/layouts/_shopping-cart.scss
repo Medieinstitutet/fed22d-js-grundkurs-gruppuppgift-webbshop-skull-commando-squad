@@ -13,16 +13,16 @@
   width: 100%;
   transition: 0.5s;
   left: -200%;
-  height: 600px;
-  display: flex;
-  justify-content: space-evenly;
   background-color: white;
-  .shopping-cart-header {
-    position: absolute;
-    top: 0;
-    height: 50px;
-    justify-content: space-evenly;
-  }
+  height: 500px;
+}
+
+.place-order {
+  border: 1px solid black;
+  bottom: 0;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
 }
 
 .shopping-cart-menu.active {
