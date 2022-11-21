@@ -137,7 +137,6 @@ function renderDonuts() {
             <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].name} munk"/>
           </section>
           <section class="donut-info">
-              Kategori: <span>${donuts[i].category}</span><br/>
               Beskrivning: <span>${donuts[i].description}</span><br/>
               Pris: <span class="price">${donuts[i].price}</span> kr<br/>
               Önskat antal: <span class="amount">${donuts[i].amount}</span> st<br/>
