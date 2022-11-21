@@ -151,7 +151,6 @@ function renderDonuts() {
 }
 
 // Funktion för att skriva ut munkar i shopping cart
-
 function addDonutsToCart() {
   document.querySelector(".shopping-cart-menu").innerHTML = "";
 
@@ -162,4 +161,5 @@ function addDonutsToCart() {
   }
 }
 
+// kallar skriva ut munkar funktionen
 renderDonuts();
