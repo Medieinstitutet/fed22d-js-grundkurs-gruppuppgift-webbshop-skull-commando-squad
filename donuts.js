@@ -151,7 +151,9 @@ function renderDonuts() {
 
 // Funktion för att skriva ut munkar i shopping cart
 function addDonutsToCart() {
-  document.querySelector(".shopping-cart-menu").innerHTML = "";
+  const shoppingCartMenu = document.querySelector(".shopping-cart-menu");
+  shoppingCartMenu.innerHTML = "";
+  console.log(shoppingCartMenu);
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
