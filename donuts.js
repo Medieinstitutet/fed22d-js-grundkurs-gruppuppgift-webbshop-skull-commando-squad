@@ -47,7 +47,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/bacon.PNG",
-    category: "kött munkar",
+    category: "köttmunkar",
     description: "Smak av bacon",
   },
   {
@@ -57,7 +57,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/rib-eye.PNG",
-    category: "kött munkar",
+    category: "köttmunkar",
     description: "Smak av entrecote",
   },
   {
@@ -67,7 +67,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/chicken.PNG",
-    category: "kött munkar",
+    category: "köttmunkar",
     description: "Smak av krispig kyckling",
   },
   {
@@ -77,7 +77,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/pulled-beef.PNG",
-    category: "kött munkar",
+    category: "köttmunkar",
     description: "Trådig och rökig",
   },
   {
@@ -87,7 +87,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/water-cress.png",
-    category: "växt-baserade munkar",
+    category: "växtbaserade munkar",
     description: "Pepprig och fräsch",
   },
   {
@@ -97,7 +97,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/dandelion.png",
-    category: "växt-baserade munkar",
+    category: "växtbaserade munkar",
     description: "Smak av sommar och blommor",
   },
   {
@@ -108,7 +108,7 @@ const donuts = [
     sum: 0,
     img: "assets/img/corn-hole.PNG",
     category: "växt-baserade munkar",
-    description: "Smak av majs och plats",
+    description: "Smak av majs och plast",
   },
   {
     name: "Seaweed",
@@ -118,7 +118,7 @@ const donuts = [
     sum: 0,
     img: "assets/img/sea-weed.png",
     category: "växt-baserade munkar",
-    description: "Stora inlag av ummami",
+    description: "Stora inlag av umami",
   },
 ];
 
@@ -137,29 +137,44 @@ function renderDonuts() {
             <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].name} munk"/>
           </section>
           <section class="donut-info">
-              Beskrivning: <span>${donuts[i].description}</span><br/>
-              Pris: <span class="price">${donuts[i].price}</span> kr<br/>
-              Önskat antal: <span class="amount">${donuts[i].amount}</span> st<br/>
+             <span>${donuts[i].description}</span><br/>
+             Pris/st: <span class="sum">${donuts[i].price}</span> kr<br />
+              Antal i varukorgen: <span class="amount">${donuts[i].amount}</span> st<br/>
               Summa: <span class="sum">${donuts[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${i}">minska</button>
-            <button data-operator="plus" data-id="${i}">öka</button>
+            <button data-operator="minus" data-id="${i}">-</button>
+            <button data-operator="plus" data-id="${i}">+</button>
           </section>
         </article>
     `;
   }
 }
 
-// Funktion för att skriva ut munkar i shopping cart
-function addDonutsToCart() {
+// funktion för att varukorgen ska uppdateras med aktuell info
+function updateCart() {
+  const totalPrice = document.querySelector(".total-price");
+  let sum = 0;
+  for (let i = 0; i < donuts.length; i++) {
+    sum = sum + donuts[i].sum;
+  }
+  totalPrice.innerHTML = sum + " kr";
   const shoppingCartMenu = document.querySelector(".shopping-cart-menu");
   shoppingCartMenu.innerHTML = "";
   console.log(shoppingCartMenu);
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
-      shoppingCartMenu.innerHTML += "<p>hej hej</p>";
+      shoppingCartMenu.innerHTML += `
+     
+      <ul class="cart-info">
+        <li>${donuts[i].name}</li>
+        <li>${donuts[i].amount}</li>
+        <li>${donuts[i].sum}</li>
+      </ul>
+      <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
+      <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button>`;
     }
   }
+  createEventListeners();
 }
 
 // kallar skriva ut munkar funktionen

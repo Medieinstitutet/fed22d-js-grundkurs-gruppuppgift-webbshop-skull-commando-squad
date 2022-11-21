@@ -1,3 +1,4 @@
+// funktion för eventlyssnare på knapparna
 createEventListeners();
 function createEventListeners() {
   const decreaseButtons = document.querySelectorAll(
@@ -11,7 +12,7 @@ function createEventListeners() {
     increaseButtons[i].addEventListener("click", increaseCount);
   }
 }
-
+// funktion för att addera antal munkar med plusknappen och uppdatera totalsumman
 function increaseCount(e) {
   const id = e.currentTarget.dataset.id;
   donuts[id].amount = donuts[id].amount + 1;
@@ -19,31 +20,19 @@ function increaseCount(e) {
 
   renderDonuts();
   createEventListeners();
-  addDonutsToCart();
+  updateCart();
 }
 
+// funktion för att minska antal munkar med minusknappen och uppdatera totalsumman
 function decreaseCount(e) {
   const id = e.currentTarget.dataset.id;
-  donuts[id].amount = donuts[id].amount;
-
-  console.log(donuts[id]);
-  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
-  let amount = Number(amountEl.innerText);
-
-  if (amount - 1 < 0) {
+  if (donuts[id].amount <= 0) {
     return;
+  } else {
+    donuts[id].amount = donuts[id].amount - 1;
+    donuts[id].sum = donuts[id].amount * donuts[id].price;
+    renderDonuts();
+    createEventListeners();
+    updateCart();
   }
-
-  amountEl.innerHTML = amount - 1;
-  updateDonutSum(e.currentTarget.parentElement);
-}
-
-function updateDonutSum(donutElement) {
-  const donutSinglePrice = donutElement.querySelector(".price").innerHTML;
-  const orderedAmount = donutElement.querySelector(".amount").innerHTML;
-
-  const sum = donutSinglePrice * orderedAmount;
-
-  donutElement.querySelector(".sum").innerHTML = sum;
-  console.log(sum + " kr");
 }
