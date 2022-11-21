@@ -1,6 +1,8 @@
 const image1 = [
     {
-    URL: 'assets/img/bacon.PNG'
+    url: '/assets/img/bacon.PNG'
+},{
+    url: '/assets/img/bacon-donut-2.jpg'
 }
 ];
 
