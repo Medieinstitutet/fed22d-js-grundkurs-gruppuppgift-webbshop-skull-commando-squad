@@ -134,7 +134,7 @@ function renderDonuts() {
         <h2>${donuts[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].name} munk"/>
+            <img src="${donuts[i].img}" width="300" height="300" loading="lazy" alt="${donuts[i].name} munk"/>
           </section>
           <section class="donut-info">
              <span>${donuts[i].description}</span><br/>
