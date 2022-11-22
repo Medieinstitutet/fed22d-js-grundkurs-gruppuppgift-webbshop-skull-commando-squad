@@ -1,7 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: hotpink;
   display: flex;
@@ -43,6 +39,7 @@ header {
     border: none;
     background-color: white;
     cursor: pointer;
+    font-size: 1rem;
   }
 }
 
@@ -79,7 +76,7 @@ main {
 }
 
 .shopping-button {
-  padding: 10px;
+  padding: 40px;
 
   button {
     color: white;
@@ -91,16 +88,4 @@ main {
   button:hover {
     outline: 1px solid palevioletred;
   }
-}
-
-.cart-info {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  list-style-type: none;
-}
-
-.cart-minus-butn,
-.cart-plus-butn {
-  display
 }
