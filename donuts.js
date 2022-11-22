@@ -166,12 +166,15 @@ function updateCart() {
       shoppingCartMenu.innerHTML += `
      
       <ul class="cart-info">
+        <li><img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].name} munk"/></li>
         <li>${donuts[i].name}</li>
-        <li>${donuts[i].amount}</li>
-        <li>${donuts[i].sum}</li>
+        <li>Antal: ${donuts[i].amount} st
+        <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
+        <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button></li>
+        <li>Summa: ${donuts[i].sum} kr</li>
+        <li><i class="fa fa-trash" aria-hidden="true"></i></li>
       </ul>
-      <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
-      <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button>`;
+`;
     }
   }
   createEventListeners();

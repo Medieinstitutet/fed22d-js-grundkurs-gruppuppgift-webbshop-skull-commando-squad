@@ -95,12 +95,7 @@ main {
 
 .cart-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: flex-start;
   list-style-type: none;
-}
-
-.cart-minus-butn,
-.cart-plus-butn {
-  display
 }
