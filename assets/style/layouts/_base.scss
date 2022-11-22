@@ -74,18 +74,3 @@ main {
 
   border: 1px solid black;
 }
-
-.shopping-button {
-  padding: 40px;
-
-  button {
-    color: white;
-    background-color: black;
-    border: none;
-    font-size: 2rem;
-    width: 40px;
-  }
-  button:hover {
-    outline: 1px solid palevioletred;
-  }
-}

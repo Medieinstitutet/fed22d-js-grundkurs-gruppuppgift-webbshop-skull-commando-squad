@@ -4,7 +4,6 @@ function printItemsInCart() {
 
   for (let i = 0; i < donuts.length; i++) {
     amount = amount + donuts[i].amount;
-    console.log(itemsInCart);
   }
   itemsInCart.innerHTML = amount;
 }

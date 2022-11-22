@@ -1,9 +1,21 @@
 .shopping-cart {
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: black;
   border: none;
   background-color: white;
   cursor: pointer;
+  padding: 20px;
+}
+
+.items-in-cart {
+  z-index: 3;
+  background-color: hotpink;
+  position: relative;
+  left: -20px;
+  bottom: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 1rem;
 }
 
 .shopping-cart-menu {
