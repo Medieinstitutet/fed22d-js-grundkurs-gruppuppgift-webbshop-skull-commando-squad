@@ -78,7 +78,7 @@ main {
 }
 
 .shopping-button {
-  padding: 10px;
+  padding: 40px;
 }
 .shopping-button button {
   color: white;
@@ -96,11 +96,6 @@ main {
   justify-content: space-around;
   align-items: flex-start;
   list-style-type: none;
-}
-
-.cart-minus-butn,
-.cart-plus-butn {
-  position: relative;
 }
 
 .donut-nav {
