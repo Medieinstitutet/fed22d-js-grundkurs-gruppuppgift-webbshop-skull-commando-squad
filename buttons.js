@@ -21,6 +21,7 @@ function increaseCount(e) {
   renderDonuts();
   createEventListeners();
   updateCart();
+  printItemsInCart();
 }
 
 // funktion för att minska antal munkar med minusknappen och uppdatera totalsumman
@@ -34,5 +35,6 @@ function decreaseCount(e) {
     renderDonuts();
     createEventListeners();
     updateCart();
+    printItemsInCart();
   }
 }

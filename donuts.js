@@ -7,6 +7,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/Chocolate-1.png",
+    alt: "donut with chocolate glaze",
     category: "goda munkar",
     description: "Smak av choklad",
   },
@@ -17,6 +18,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/vanilla-ice.png",
+    alt: "donut with vanilla glaze",
     category: "goda munkar",
     description: "Smak av vanilj",
   },
@@ -27,6 +29,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/strawberry.png",
+    alt: "donut with strawberry glaze",
     category: "goda munkar",
     description: "Smak av jordgubb",
   },
@@ -37,6 +40,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/salted-caramell.png",
+    alt: "donut made of fudge",
     category: "goda munkar",
     description: "Smak av kola",
   },
@@ -47,6 +51,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/bacon.PNG",
+    alt: "donut with bacon crust and glaze",
     category: "köttmunkar",
     description: "Smak av bacon",
   },
@@ -57,6 +62,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/rib-eye.PNG",
+    alt: "donut with meat filling",
     category: "köttmunkar",
     description: "Smak av entrecote",
   },
@@ -67,6 +73,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/chicken.PNG",
+    alt: "donut made of chicken with crust",
     category: "köttmunkar",
     description: "Smak av krispig kyckling",
   },
@@ -77,6 +84,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/pulled-beef.PNG",
+    alt: "donut with pulled beef topping",
     category: "köttmunkar",
     description: "Trådig och rökig",
   },
@@ -87,6 +95,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/water-cress.png",
+    alt: "green donut made of cress",
     category: "växtbaserade munkar",
     description: "Pepprig och fräsch",
   },
@@ -97,6 +106,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/dandelion.png",
+    alt: "yellow donut made of flowers",
     category: "växtbaserade munkar",
     description: "Smak av sommar och blommor",
   },
@@ -107,6 +117,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/corn-hole.PNG",
+    alt: "a plastic ring with a corn in it",
     category: "växt-baserade munkar",
     description: "Smak av majs och plast",
   },
@@ -117,6 +128,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: "assets/img/sea-weed.png",
+    alt: "donut made of sea weed",
     category: "växt-baserade munkar",
     description: "Stora inlag av umami",
   },
@@ -134,7 +146,7 @@ function renderDonuts() {
         <h2>${donuts[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${donuts[i].img}" width="300" height="300" loading="lazy" alt="${donuts[i].name} munk"/>
+            <img src="${donuts[i].img}" width="300" height="300" loading="lazy" alt="${donuts[i].alt}"/>
           </section>
           <section class="donut-info">
              <span>${donuts[i].description}</span><br/>
@@ -147,37 +159,6 @@ function renderDonuts() {
         </article>
     `;
   }
-}
-
-// funktion för att varukorgen ska uppdateras med aktuell info
-function updateCart() {
-  const totalPrice = document.querySelector(".total-price");
-  let sum = 0;
-  for (let i = 0; i < donuts.length; i++) {
-    sum = sum + donuts[i].sum;
-  }
-  totalPrice.innerHTML = sum + " kr";
-  const shoppingCartMenu = document.querySelector(".shopping-cart-object");
-  shoppingCartMenu.innerHTML = "";
-  console.log(shoppingCartMenu);
-
-  for (let i = 0; i < donuts.length; i++) {
-    if (donuts[i].amount > 0) {
-      shoppingCartMenu.innerHTML += `
-     
-      <ul class="cart-info">
-        <li><img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].name} munk"/></li>
-        <li>${donuts[i].name}</li>
-        <li>Antal: ${donuts[i].amount} st
-        <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
-        <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button></li>
-        <li>Summa: ${donuts[i].sum} kr</li>
-        <li><button class="remove"><i class="fa fa-trash" aria-hidden="true"></i></button></li>
-      </ul>
-`;
-    }
-  }
-  createEventListeners();
 }
 
 // kallar skriva ut munkar funktionen

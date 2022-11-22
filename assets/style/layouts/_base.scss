@@ -16,7 +16,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
   .gottfrid {
     display: flex;
     flex-direction: column;
@@ -28,7 +27,6 @@ header {
 }
 
 .filter-buttons {
-  border: 1px solid black;
   height: 20px;
   width: 100%;
   position: fixed;
