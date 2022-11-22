@@ -157,7 +157,7 @@ function updateCart() {
     sum = sum + donuts[i].sum;
   }
   totalPrice.innerHTML = sum + " kr";
-  const shoppingCartMenu = document.querySelector(".shopping-cart-menu");
+  const shoppingCartMenu = document.querySelector(".shopping-cart-object");
   shoppingCartMenu.innerHTML = "";
   console.log(shoppingCartMenu);
 
@@ -172,7 +172,7 @@ function updateCart() {
         <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
         <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button></li>
         <li>Summa: ${donuts[i].sum} kr</li>
-        <li><i class="fa fa-trash" aria-hidden="true"></i></li>
+        <li><button class="remove"><i class="fa fa-trash" aria-hidden="true"></i></button></li>
       </ul>
 `;
     }
