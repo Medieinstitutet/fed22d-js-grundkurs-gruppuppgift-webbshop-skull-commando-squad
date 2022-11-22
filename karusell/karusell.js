@@ -1,4 +1,4 @@
-const image1 = [
+const images = [
     {
     url: '/assets/img/bacon.PNG'
 },{
@@ -6,7 +6,8 @@ const image1 = [
 }
 ];
 
-const image = document.querySelector('#image')
+const imageOne = document.querySelector('#imageOne')
+const imageTwo = document.querySelector('#imageTwo')
 const leftButton = document.querySelector('#leftButton')
 const rightButton = document.querySelector('#rightButton')
 
@@ -16,19 +17,18 @@ leftButton.addEventListener("click", leftClick);
 let currentImageIndex = 0;
 
 function init() {
-image.setAttribute('src', image1[0].url);
+imageOne.setAttribute('src', images[0].url);
 };
 
 function leftClick() {
     console.log(currentImageIndex);
-
- currentImageIndex--
+    currentImageIndex = Number(currentImageIndex -= 1);
 }
 
 
 function rightClick() {
- console.log(currentImageIndex);
- currentImageIndex++
+    console.log(currentImageIndex);
+    currentImageIndex = Number(currentImageIndex += 1);
 }
 
-init();
+init(); 
