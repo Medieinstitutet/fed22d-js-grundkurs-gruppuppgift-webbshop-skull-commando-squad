@@ -153,8 +153,8 @@ function renderDonuts() {
              Pris/st: <span class="sum">${donuts[i].price}</span> kr<br />
               Antal i varukorgen: <span class="amount">${donuts[i].amount}</span> st<br/>
               Summa: <span class="sum">${donuts[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${i}">-</button>
-            <button data-operator="plus" data-id="${i}">+</button>
+            <button data-operator="minus" data-id="${i}" aria-label="decrease-item-button">-</button>
+            <button data-operator="plus" data-id="${i}" arira-label="increase-item-button">+</button>
           </section>
         </article>
     `;

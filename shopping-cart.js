@@ -25,13 +25,13 @@ function updateCart() {
       shoppingCartMenu.innerHTML += `
      
       <ul class="cart-info">
-        <li><img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt} munk"/></li>
+        <li><img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/></li>
         <li>${donuts[i].name}</li>
         <li>Antal: ${donuts[i].amount} st
-        <button data-operator="minus" data-id="${i}" class="cart-minus-butn">-</button>
-        <button data-operator="plus" data-id="${i}" class="cart-plus-btn">+</button></li>
+        <button data-operator="minus" data-id="${i}" class="cart-minus-butn" aria-label="decrease-item-button">-</button>
+        <button data-operator="plus" data-id="${i}" class="cart-plus-btn" aria-label="increase-item-button">+</button></li>
         <li>Summa: ${donuts[i].sum} kr</li>
-        <li><button class="remove-cart-item"><i class="fa fa-trash" aria-hidden="true"></i></button></li>
+        <li><button class="remove-cart-item" aria-label="remove-item-button"><i class="fa fa-trash" aria-hidden="true"></i></button></li>
       </ul>
 `;
     }
