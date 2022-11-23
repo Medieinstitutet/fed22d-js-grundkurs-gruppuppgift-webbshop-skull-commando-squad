@@ -7,33 +7,33 @@ const images = [
 ];
 
 const imageOne = document.querySelector('#imageOne')
-const imageTwo = document.querySelector('#imageTwo')
-const leftButton = document.querySelector('#leftButton')
-const rightButton = document.querySelector('#rightButton')
-let currentImageIndex = 0;
-let firstImageOnTop = true;
+const prevBtn = document.querySelector('#prevBtn')
+const nextBtn = document.querySelector('#nextBtn')
+let currentImageIndex = -1;
 
 
 
-function init() {
-imageOne.setAttribute('src', images[0].url);
-};
-
-rightButton.addEventListener("click", rightClick);
-leftButton.addEventListener("click", leftClick);
-
-
-function leftClick() {
+function nextClick() {
+    if (currentImageIndex + 1 > images.length -1) {
+        currentImageIndex = 0;
+    }else{
+         currentImageIndex += 1;
+}
+    imageOne.setAttribute('src', images[currentImageIndex].url);
     console.log(currentImageIndex);
-    currentImageIndex = Number(currentImageIndex -= 1);
-    init();
+}
+function nextClick() {
+    if (currentImageIndex - 1 < 0) {
+        currentImageIndex = images.length - 1;
+    }else{
+        currentImageIndex -= 1;
+    }
+    imageOne.setAttribute('src', images[currentImageIndex].url);
+    console.log(currentImageIndex);
 }
 
 
-function rightClick() {
-    console.log(currentImageIndex);
-    currentImageIndex = Number(currentImageIndex += 1);
-    init(); 
-}
+nextBtn.addEventListener("click", nextClick);
+prevBtn.addEventListener("click", nextClick);
 
-init(); 
+nextClick();
