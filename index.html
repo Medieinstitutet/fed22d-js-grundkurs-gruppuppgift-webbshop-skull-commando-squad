@@ -23,28 +23,34 @@
       <section class="shopping-cart-menu">
         <h2>Varukorg</h2>
         <hr />
-        <section class="shopping-cart-object"></section>
+        <section class="shopping-cart-object">Din varukorg är tom</section>
         <section class="place-order">
           Total summa: <span class="total-price">0 kr</span>
-          <button class="submit-order" aria-label="sumbit-order" disabled>
+          <button
+            class="submit-order"
+            aria-label="sumbit-order-button"
+            disabled
+          >
             Skicka beställning
           </button>
         </section>
       </section>
     </header>
     <section class="filter-buttons">
-      <button><span class="fa fa-star"></span></button>
-      <button>
+      <button id="rating-sort" aria-label="button-for-sorting-by-rating">
+        <span class="fa fa-star"></span>
+      </button>
+      <button id="name-sort" aria-label="button-for-sorting-by-name">
         <span class="fa fa-arrow-up"></span>
         <span class="fa fa-arrow-down"></span>
         a-z
-      </button>
+      </button id="price-sort" aria-label="button-for-searching-by-price">
       <button>
         <span class="fa fa-arrow-up"></span>
         <span class="fa fa-arrow-down"></span>
         1-9
       </button>
-      <button><span class="fa fa-filter"></span></button>
+      <button id="filter-sort" aria-label="button-for-filer-soring"><span class="fa fa-filter"></span></button>
     </section>
     <main>
       <section class="donutContainer"></section>
