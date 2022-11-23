@@ -137,6 +137,22 @@ const donuts = [
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 
+// Deklarerar variablar för sorting knappar av namn
+const sortByNameBtnStart = document.querySelector(".nameSortStart");
+const sortByNameBtnEnd = document.querySelector(".nameSortEnd");
+
+// Deklarerar variablar för sorting knappar av rating
+const sortByRatingBtnStart = document.querySelector(".ratingSortStart");
+const sortByRatingBtnEnd = document.querySelector(".ratingSortEnd");
+
+// eventlistener för knappar av rating sortering
+sortByRatingBtnStart.addEventListener("click", sortByRatingStart);
+sortByRatingBtnEnd.addEventListener("click", sortByRatingEnd);
+
+// eventlistener för knappar av namn sortering
+sortByNameBtnStart.addEventListener("click", sortByNameStart);
+sortByNameBtnEnd.addEventListener("click", sortByNameEnd);
+
 //Funktion för att skriva ut munk objekt via for loop
 function renderDonuts() {
   donutContainer.innerHTML = "";
@@ -159,6 +175,47 @@ function renderDonuts() {
         </article>
     `;
   }
+}
+
+// Funktion för att sortera munkar efter namn
+function sortByNameStart() {
+  const sorted = donuts.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
+
+  renderDonuts();
+}
+
+function sortByNameEnd() {
+  const sorted = donuts.sort((a, b) => {
+    if (a.name > b.name) {
+      return -1;
+    }
+
+    if (a.name < b.name) {
+      return 1;
+    }
+    return 0;
+  });
+
+  renderDonuts();
+}
+
+function sortByRatingStart() {
+  donuts.sort((a, b) => a.rating - b.rating);
+  renderDonuts();
+}
+
+function sortByRatingEnd() {
+  donuts.sort((a, b) => b.rating - a.rating);
+  renderDonuts();
 }
 
 // kallar skriva ut munkar funktionen
