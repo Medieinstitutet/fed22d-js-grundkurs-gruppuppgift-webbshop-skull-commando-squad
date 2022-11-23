@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="A E-shop site for donuts">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Donuts, E-shop">
-    <meta name="author" content="Robin Sevelin, Sebasitan Post, Veronica Bergström">
+    <meta name="description" content="A E-shop site for donuts" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Donuts, E-shop" />
+    <meta
+      name="author"
+      content="Robin Sevelin, Sebasitan Post, Veronica Bergström"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gottfrids munkfabrik</title>
@@ -26,7 +29,7 @@
       <section class="shopping-cart-menu">
         <h2>Varukorg</h2>
         <hr />
-        <section class="shopping-cart-object">Din varukorg är tom</section>
+        <section class="shopping-cart-object"></section>
         <section class="place-order">
           Total summa: <span class="total-price">0 kr</span>
           <button
@@ -40,28 +43,27 @@
       </section>
     </header>
     <section class="filter-buttons">
-      <button id="rating-sort" aria-label="button-for-sorting-by-rating">
-        <span class="fa fa-star" aria-hidden="true"></span>
+      <button class="nameSortStart" aria-label="sorting-by-name-a-z">
+        <i class="fa fa-arrow-down" aria-hidden="true"> </i> a-z
       </button>
-      <button id="name-sort" aria-label="button-for-sorting-by-name">
-        <span class="fa fa-arrow-up" aria-hidden="true"></span>
-        <span class="fa fa-arrow-down" aria-hidden="true"></span>
-        a-z
-      </button id="price-sort" aria-label="button-for-searching-by-price">
-      <button>
-        <span class="fa fa-arrow-up" aria-hidden="true"></span>
-        <span class="fa fa-arrow-down" aria-hidden="true"></span>
-        1-9
+      <button class="nameSortEnd" aria-label="sorting-by-name-z-a">
+        <i class="fa fa-arrow-up" aria-hidden="true"> </i> z-a
+        <button class="ratingSortStart" aria-label="sorting-by-rating-descending">
+          <i class="fa fa-arrow-down" aria-hidden="true"> </i>
+          <i class="fa fa-star" aria-hidden="true"> </i>
+        </button>
+        <button class="ratingSortEnd" aria-label="sorting-by-rating-ascending">
+          <i class="fa fa-arrow-up" aria-hidden="true"> </i>
+          <i class="fa fa-star" aria-hidden="true"> </i>
       </button>
-      <button id="filter-sort" aria-label="button-for-filter-sorting"><span class="fa fa-filter" aria-hidden="true"></span></button>
     </section>
     <main>
       <section class="donutContainer"></section>
     </main>
 
-    <script src="shopping-cart.js"></script>
     <script src="donuts.js"></script>
     <script src="buttons.js"></script>
     <script src="/assets/script/script.js"></script>
+    <script src="shopping-cart.js"></script>
   </body>
 </html>
