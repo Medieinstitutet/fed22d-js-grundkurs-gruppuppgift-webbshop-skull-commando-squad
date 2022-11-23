@@ -5,12 +5,10 @@ main {
 
 .donut {
   flex-direction: row;
-  width: 400px;
+  width: 500px;
+  justify-content: space-evenly;
 }
 
 .donut-info {
   width: 200px;
-}
-
-.donutContainer {
 }
