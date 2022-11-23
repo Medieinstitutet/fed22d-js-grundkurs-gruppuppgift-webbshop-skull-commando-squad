@@ -149,6 +149,14 @@ const sortByRatingBtnEnd = document.querySelector(".ratingSortEnd");
 sortByRatingBtnStart.addEventListener("click", sortByRatingStart);
 sortByRatingBtnEnd.addEventListener("click", sortByRatingEnd);
 
+// Deklarerar variablar för sorting knappar av pris
+const sortByPriceBtnStart = document.querySelector(".priceSortStart");
+const sortByPriceBtnEnd = document.querySelector(".priceSortEnd");
+
+// eventlistener för knappar av pris sortering
+sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
+sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
+
 // eventlistener för knappar av namn sortering
 sortByNameBtnStart.addEventListener("click", sortByNameStart);
 sortByNameBtnEnd.addEventListener("click", sortByNameEnd);
@@ -215,6 +223,16 @@ function sortByRatingStart() {
 
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
+  renderDonuts();
+}
+
+function sortByPriceStart() {
+  donuts.sort((a, b) => a.price - b.price);
+  renderDonuts();
+}
+
+function sortByPriceEnd() {
+  donuts.sort((a, b) => b.price - a.price);
   renderDonuts();
 }
 
