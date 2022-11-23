@@ -214,6 +214,7 @@ function sortByNameEnd() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
