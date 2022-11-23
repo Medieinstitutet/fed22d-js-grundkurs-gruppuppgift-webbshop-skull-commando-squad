@@ -108,7 +108,7 @@ const donuts = [
     img: "assets/img/dandelion.png",
     alt: "yellow donut made of flowers",
     category: "växtbaserade munkar",
-    description: "Smak av sommar och blommor",
+    description: "Smak av maskros",
   },
   {
     name: "Corn Hole",
@@ -170,7 +170,7 @@ function renderDonuts() {
         <h2>${donuts[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${donuts[i].img}" width="300" height="300" loading="lazy" alt="${donuts[i].alt}"/>
+            <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].alt}"/>
           </section>
           <section class="donut-info">
              <span>${donuts[i].description}</span><br/>
@@ -200,7 +200,7 @@ function sortByNameStart() {
 
   renderDonuts();
 }
-
+// Funktion för att sortera munkar efter namn
 function sortByNameEnd() {
   const sorted = donuts.sort((a, b) => {
     if (a.name > b.name) {
@@ -215,22 +215,22 @@ function sortByNameEnd() {
 
   renderDonuts();
 }
-
+// Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
   donuts.sort((a, b) => a.rating - b.rating);
   renderDonuts();
 }
-
+// Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
   renderDonuts();
 }
-
+// Funktion för att sortera munkar efter pris
 function sortByPriceStart() {
   donuts.sort((a, b) => a.price - b.price);
   renderDonuts();
 }
-
+// Funktion för att sortera munkar efter pris
 function sortByPriceEnd() {
   donuts.sort((a, b) => b.price - a.price);
   renderDonuts();
