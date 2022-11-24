@@ -83,8 +83,9 @@ main {
   justify-content: center;
   align-items: center;
   padding: 10px;
-.formsWrapper .cardDetails {
-  display: none;
+  .formsWrapper .cardDetails {
+    display: none;
+  }
 }
 
 .visible {
