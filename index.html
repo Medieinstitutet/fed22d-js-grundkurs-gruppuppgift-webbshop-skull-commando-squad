@@ -30,16 +30,15 @@
         <h2>Varukorg</h2>
         <hr />
         <section class="shopping-cart-object">Din varukorg är tom</section>
-        <section class="checkout-order">
-          <section class="discount-container"></section>
-          <section class="toal-sum">
-            Total summa: <span class="total-price">0 kr</span>
-          </section>
-          <section class="checkout">
-            <button class="checkout" aria-label="checkout-button" disabled>
-              Gå till kassan
-            </button>
-          </section>
+        <section class="place-order">
+          Total summa: <span class="total-price">0 kr</span>
+          <button
+            class="submit-order"
+            id="showForm"
+            aria-label="sumbit-order-button"
+          >
+            Skicka beställning
+          </button>
         </section>
       </section>
       <!--hamburger start-->
@@ -137,7 +136,105 @@
         </span>
         <span id="currentRangeValue">, 100</span> kr
       </label>
+
+    <section class="filter-buttons">
+      <button class="nameSortStart" aria-label="sorting-by-name-a-z">
+        <i class="fa fa-arrow-down" aria-hidden="true"> </i> a-z
+      </button>
+      <button class="nameSortEnd" aria-label="sorting-by-name-z-a">
+        <i class="fa fa-arrow-up" aria-hidden="true"> </i> z-a
+      </button>
+      <button class="priceSortStart" aria-label="sorting-by-price-descending">
+        <i class="fa fa-arrow-down" aria-hidden="true"> </i
+        ><i class="fa fa-dollar" aria-hidden="true"> </i>
+      </button>
+      <button class="priceSortEnd" aria-label="sorting-by-price-ascending">
+        <i class="fa fa-arrow-up" aria-hidden="true"> </i
+        ><i class="fa fa-dollar" aria-hidden="true"> </i>
+      </button>
+      <button class="ratingSortStart" aria-label="sorting-by-rating-descending">
+        <i class="fa fa-arrow-down" aria-hidden="true"> </i
+        ><i class="fa fa-star" aria-hidden="true"> </i>
+      </button>
+      <button class="ratingSortEnd" aria-label="sorting-by-rating-ascending">
+        <i class="fa fa-arrow-up" aria-hidden="true"> </i
+        ><i class="fa fa-star" aria-hidden="true"> </i>
+      </button>
     </section>
+
+    <aside id="order-form" class="hidden">
+      <div class="formsWrapper">
+        <form>
+          <!---Formulär-->
+          <label for="fname">Förnamn:</label>
+          <input type="text" id="nameField" placeholder="Förnamn"></input>
+          <label for="lname">Efternamn:</label>
+          <input type="text" id="lname" name="lname" placeholder="Efternamn" /></label>
+          <label for="adress">Adress:</label>
+          <input type="text" id="adress" name="adresse" placeholder="Adress" />
+          <label for="postnummer">Postnummer:</label>
+          <input
+            type="text"
+            id="postnummer"
+            name="zipcode"
+            placeholder="Postnummer"
+          />
+          <label for="stad">Stad:</label>
+          <input type="text" id="stad" name="city" placeholder="Stad" />
+          <label for="phone">Telefonnummer:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="07XXXXXXXX"
+            required
+            minlength="10"
+            maxlength="12"
+          />
+          <label for="email">E-post:</label>
+          <input type="email" id="email" placeholder="E-post" /><br />
+          <input
+            type="radio"
+            id="cardRadio"
+            name="payMethod"
+            value="Kort"
+            class="cardButton"
+                    />
+          <label for="card">Kort</label>
+          <!---- Kortdetaljer. Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
+          <div class="cardDetails" id="cardDetails">
+            <label for="cardNumber">Kortnummer:</label>
+            <input type="text" id="cardNumber" name="ccInfo"
+            placeholder="Kortnummer">
+            <label for="cardNumber">Giltighetstid:</label>
+            <input
+              type="text"
+              id="yearMonth"
+              name="ccInfo"
+              placeholder="År/månad"
+            />
+            <label for="cardNumber">CCV:</label>
+            <input type="text" id="cardNumber" name="ccInfo"
+            placeholder="Kortnummer" min="3" max="3">
+          </div>
+          <br />
+          <!---Fortsättning på formuläret som är synligt-->
+          <input type="radio" id="invoiceRadio" name="payMethod" value="Faktura" />
+          <label for="invoice">Faktura</label><br />
+          <label for="reklam">Vill du prenumerera på vårt nyhetsbrev?</label>
+          <input type="checkbox" id="reklam" name="newsLetter" checked /><br />
+          <label for="usage"
+            >Klicka här för att godkänna <a href="#">användarvillkoren</a></label
+          >
+          <input type="checkbox" id="usage" name="usage" />
+          <br />
+          <input type="reset" value="Rensa formulär" />
+          <input type="submit" id="submit" class="pay-button" value="Lägg beställning" disabled = "disabled" />
+        </form>
+        <button id="close-form">Tillbaka</button>
+      </div>
+    </aside>
+
     <main>
       <section class="donutContainer"></section>
     </main>
@@ -146,5 +243,6 @@
     <script src="buttons.js"></script>
     <script src="/assets/script/script.js"></script>
     <script src="shopping-cart.js"></script>
+    <script src="/forms/forms.js"></script>
   </body>
 </html>
