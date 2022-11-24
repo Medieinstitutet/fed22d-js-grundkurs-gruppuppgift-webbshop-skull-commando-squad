@@ -199,6 +199,7 @@ function sortByNameStart() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter namn
 function sortByNameEnd() {
@@ -220,21 +221,25 @@ function sortByNameEnd() {
 function sortByRatingStart() {
   donuts.sort((a, b) => a.rating - b.rating);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceStart() {
   donuts.sort((a, b) => a.price - b.price);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceEnd() {
   donuts.sort((a, b) => b.price - a.price);
   renderDonuts();
+  createEventListeners();
 }
 
 // kallar skriva ut munkar funktionen
