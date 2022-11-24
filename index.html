@@ -100,7 +100,39 @@
       </nav>
       <!--hamburger ends-->
     </header>
+    <section id="filter-search">
+      <section class="filter">
+        <label>
+          <input type="radio" name="categoryFilter" value="sweet" />
+          Sweet
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="sour" />
+          Sour
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="vegan" />
+          Vegan </label
+        ><br />
+        <label>
+          <input type="radio" name="categoryFilter" value="all" checked />
+          Show all
+        </label>
 
+        <p>
+          <label>
+            <span>Price Range</span>
+            <span class="flex">
+              <span>0 kr</span>
+              <input type="range" min="0" max="500" value="500" id="priceRange" step="10" />
+              <span>500 kr</span>
+            </span>
+            <span id="currentRangeValue">500</span> kr
+          </label>
+        </p>
+      </section>
+      <section id="productsListing"></div>
+      </section>
     <main>
       <section class="donutContainer"></section>
     </main>
