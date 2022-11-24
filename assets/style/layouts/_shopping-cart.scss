@@ -20,17 +20,24 @@
 
 .shopping-cart-menu {
   padding-top: 50px;
+  bottom: 0;
   position: fixed;
   top: 120px;
   width: 100%;
   transition: 0.5s;
   left: -200%;
   background-color: white;
+  overflow-y: auto;
+}
+
+.shopping-cart-object {
+  height: 100px;
 }
 
 .cart-info {
   display: flex;
   justify-content: space-evenly;
+  height: 100px;
   .cart-img,
   .cart-item-name,
   .cart-item-sum {
@@ -68,6 +75,7 @@
   padding: 10px;
   width: 100%;
   background-color: white;
+  bottom: 0;
   position: fixed;
   display: flex;
   justify-content: space-evenly;
