@@ -8,7 +8,6 @@
 }
 
 .items-in-cart {
-  z-index: 3;
   background-color: hotpink;
   position: relative;
   left: -20px;
@@ -20,28 +19,63 @@
 
 .shopping-cart-menu {
   padding-top: 50px;
+  bottom: 0;
   position: fixed;
-  top: 120px;
+  top: 210px;
   width: 100%;
   transition: 0.5s;
   left: -200%;
   background-color: white;
+  overflow-y: auto;
 }
 
 .shopping-cart-object {
-  ul {
-    list-style: none;
+  height: 100px;
+}
+
+.cart-info {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  .cart-img,
+  .cart-item-name,
+  .cart-item-sum {
+    width: 100px;
+    height: 100px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+  .cart-item-amount {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .remove-cart-item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
   }
 }
 
-.place-order {
+.checkout-order {
   padding: 10px;
   width: 100%;
   background-color: white;
-  position: absolute;
+  bottom: 0;
+  position: fixed;
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
@@ -63,11 +97,4 @@ button:hover {
 
 .shopping-cart-menu.active {
   left: 0;
-}
-
-.remove-cart-item {
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  font-size: 1.5rem;
 }

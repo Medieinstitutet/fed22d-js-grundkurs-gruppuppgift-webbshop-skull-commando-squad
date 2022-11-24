@@ -1,5 +1,5 @@
 // hamburgar meny start //
-/*
+
 // deklarerar en hamburger variabel
 const hamburger = document.querySelector(".hamburger");
 // deklarerar en menu variabel
@@ -14,7 +14,7 @@ function openMenu() {
 }
 
 // hamburgar meny end //
-*/
+
 // shoppingcart meny start //
 
 // deklarerar en shopping-cart variabel

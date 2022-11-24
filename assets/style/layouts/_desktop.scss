@@ -2,3 +2,13 @@ main {
   max-width: 1024px;
   margin: 0 auto;
 }
+
+.donut {
+  flex-direction: row;
+  width: 500px;
+  justify-content: space-evenly;
+}
+
+.donut-info {
+  width: 200px;
+}

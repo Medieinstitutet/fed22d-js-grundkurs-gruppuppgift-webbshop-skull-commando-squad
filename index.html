@@ -29,33 +29,115 @@
       <section class="shopping-cart-menu">
         <h2>Varukorg</h2>
         <hr />
-        <section class="shopping-cart-object"></section>
-        <section class="place-order">
-          Total summa: <span class="total-price">0 kr</span>
-          <button
-            class="submit-order"
-            aria-label="sumbit-order-button"
-            disabled
-          >
-            Skicka beställning
-          </button>
+        <section class="shopping-cart-object">Din varukorg är tom</section>
+        <section class="checkout-order">
+          <section class="discount-container"></section>
+          <section class="toal-sum">
+            Total summa: <span class="total-price">0 kr</span>
+          </section>
+          <section class="checkout">
+            <button class="checkout" aria-label="checkout-button" disabled>
+              Gå till kassan
+            </button>
+          </section>
         </section>
       </section>
-    </header>
-    <section class="filter-buttons">
-      <button class="nameSortStart" aria-label="sorting-by-name-a-z">
-        <i class="fa fa-arrow-down" aria-hidden="true"> </i> a-z
-      </button>
-      <button class="nameSortEnd" aria-label="sorting-by-name-z-a">
-        <i class="fa fa-arrow-up" aria-hidden="true"> </i> z-a
-        <button class="ratingSortStart" aria-label="sorting-by-rating-descending">
-          <i class="fa fa-arrow-down" aria-hidden="true"> </i>
-          <i class="fa fa-star" aria-hidden="true"> </i>
+      <!--hamburger start-->
+      <nav class="donut-nav">
+        <ul class="donut-nav-menu">
+          <li class="nav-item-donut">
+            <button class="nameSortStart" aria-label="sorting-by-name-a-z">
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i> a-z
+            </button>
+          </li>
+          <li class="nav-item-donut">
+            <button class="nameSortEnd" aria-label="sorting-by-name-z-a">
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i> z-a
+            </button>
+          </li>
+          <li class="nav-item-donut">
+            <button
+              class="priceSortStart"
+              aria-label="sorting-by-price-descending"
+            >
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i
+              ><i class="fa fa-dollar" aria-hidden="true"> </i>
+            </button>
+          </li>
+          <li class="nav-item-donut">
+            <button
+              class="priceSortEnd"
+              aria-label="sorting-by-price-ascending"
+            >
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i
+              ><i class="fa fa-dollar" aria-hidden="true"> </i>
+            </button>
+          </li>
+          <li class="nav-item-donut">
+            <button
+              class="ratingSortStart"
+              aria-label="sorting-by-rating-descending"
+            >
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i
+              ><i class="fa fa-star" aria-hidden="true"> </i>
+            </button>
+          </li>
+          <li class="nav-item-donut">
+            <button
+              class="ratingSortEnd"
+              aria-label="sorting-by-rating-ascending"
+            >
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i
+              ><i class="fa fa-star" aria-hidden="true"> </i>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="menu-button" tabindex="3">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
-        <button class="ratingSortEnd" aria-label="sorting-by-rating-ascending">
-          <i class="fa fa-arrow-up" aria-hidden="true"> </i>
-          <i class="fa fa-star" aria-hidden="true"> </i>
-      </button>
+      </nav>
+      <!--hamburger ends-->
+    </header>
+    <section id="filter-search">
+      <section class="filter">
+        <label>
+          <input type="radio" name="categoryFilter" value="sweet" />
+          Goda munkar
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="sour" />
+          Kött munkar
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="vegan" />
+          Växt baserade munkar </label
+        ><br />
+        <label>
+          <input type="radio" name="categoryFilter" value="all" checked />
+          Visa alla
+        </label>
+      </section>
+      <section id="productsListing"></section>
+    </section>
+    <section class="filter-bar">
+      <label>
+        <span>Pris intervall</span>
+        <span class="flex">
+          <span>0 kr</span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            id="priceRange"
+            step="10"
+          />
+          <span>100 kr</span>
+        </span>
+        <span id="currentRangeValue">, 100</span> kr
+      </label>
     </section>
     <main>
       <section class="donutContainer"></section>

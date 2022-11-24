@@ -108,7 +108,7 @@ const donuts = [
     img: "assets/img/dandelion.png",
     alt: "yellow donut made of flowers",
     category: "växtbaserade munkar",
-    description: "Smak av sommar och blommor",
+    description: "Smak av maskros",
   },
   {
     name: "Corn Hole",
@@ -149,6 +149,14 @@ const sortByRatingBtnEnd = document.querySelector(".ratingSortEnd");
 sortByRatingBtnStart.addEventListener("click", sortByRatingStart);
 sortByRatingBtnEnd.addEventListener("click", sortByRatingEnd);
 
+// Deklarerar variablar för sorting knappar av pris
+const sortByPriceBtnStart = document.querySelector(".priceSortStart");
+const sortByPriceBtnEnd = document.querySelector(".priceSortEnd");
+
+// eventlistener för knappar av pris sortering
+sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
+sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
+
 // eventlistener för knappar av namn sortering
 sortByNameBtnStart.addEventListener("click", sortByNameStart);
 sortByNameBtnEnd.addEventListener("click", sortByNameEnd);
@@ -162,7 +170,7 @@ function renderDonuts() {
         <h2>${donuts[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${donuts[i].img}" width="300" height="300" loading="lazy" alt="${donuts[i].alt}"/>
+            <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].alt}"/>
           </section>
           <section class="donut-info">
              <span>${donuts[i].description}</span><br/>
@@ -191,8 +199,9 @@ function sortByNameStart() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
-
+// Funktion för att sortera munkar efter namn
 function sortByNameEnd() {
   const sorted = donuts.sort((a, b) => {
     if (a.name > b.name) {
@@ -206,16 +215,31 @@ function sortByNameEnd() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
-
+// Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
   donuts.sort((a, b) => a.rating - b.rating);
   renderDonuts();
+  createEventListeners();
 }
-
+// Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
   renderDonuts();
+  createEventListeners();
+}
+// Funktion för att sortera munkar efter pris
+function sortByPriceStart() {
+  donuts.sort((a, b) => a.price - b.price);
+  renderDonuts();
+  createEventListeners();
+}
+// Funktion för att sortera munkar efter pris
+function sortByPriceEnd() {
+  donuts.sort((a, b) => b.price - a.price);
+  renderDonuts();
+  createEventListeners();
 }
 
 // kallar skriva ut munkar funktionen

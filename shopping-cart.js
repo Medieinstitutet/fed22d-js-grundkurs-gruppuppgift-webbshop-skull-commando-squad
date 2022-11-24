@@ -18,24 +18,37 @@ function updateCart() {
   totalPrice.innerHTML = sum + " kr";
   const shoppingCartMenu = document.querySelector(".shopping-cart-object");
   shoppingCartMenu.innerHTML = "";
-  console.log(shoppingCartMenu);
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
       shoppingCartMenu.innerHTML += `
      
-      <ul class="cart-info">
-        <li><img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/></li>
-        <li>${donuts[i].name}</li>
-        <li>Antal: ${donuts[i].amount} st
-        <button data-operator="minus" data-id="${i}" class="cart-minus-butn" aria-label="decrease-item-button">-</button>
-        <button data-operator="plus" data-id="${i}" class="cart-plus-btn" aria-label="increase-item-button">+</button></li>
-        <li>Summa: ${donuts[i].sum} kr</li>
-        <li><button class="remove-cart-item" aria-label="remove-item-button"><i class="fa fa-trash" aria-hidden="true"></i></button></li>
-      </ul>
+      <section class="cart-info">
+        <section class="cart-img">
+          <img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+        </section>
+        <section class="cart-item-name">
+          ${donuts[i].name}
+        </section>
+        <section class="cart-item-amount">
+          ${donuts[i].amount} st
+          <button data-operator="minus" data-id="${i}" class="cart-minus-butn" aria-label="decrease-item-button">
+          -
+          </button>
+          <button data-operator="plus" data-id="${i}" class="cart-plus-btn" aria-label="increase-item-button">
+          +
+          </button>
+        </section>
+        <section class="cart-item-sum"> 
+          ${donuts[i].sum} kr
+        </section>
+        <section class="remove-cart-item">
+          <button data-id="${i}" class="remove-cart-item" aria-label="remove-item-button">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </section>
+      </section>
 `;
     }
   }
-
-  createEventListeners();
 }
