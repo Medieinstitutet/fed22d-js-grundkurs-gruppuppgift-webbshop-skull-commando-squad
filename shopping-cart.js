@@ -15,7 +15,15 @@ function updateCart() {
   for (let i = 0; i < donuts.length; i++) {
     sum = sum + donuts[i].sum;
   }
-  totalPrice.innerHTML = sum + " kr";
+
+  // kontrollerar om dagens datum är måndag innan kl 10, drar 10% och visar meddelande
+  const rebate = new Date();
+  if (rebate.getDay() === 1 && rebate.getHours() < 10) {
+    sum = sum * 0.9;
+    document.querySelector(".rebate").style.display = "block";
+  }
+
+  totalPrice.innerHTML = sum.toFixed(2) + " kr";
   const shoppingCartMenu = document.querySelector(".shopping-cart-object");
   shoppingCartMenu.innerHTML = "";
 
