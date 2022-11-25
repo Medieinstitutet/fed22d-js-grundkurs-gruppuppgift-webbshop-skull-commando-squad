@@ -37,7 +37,7 @@
             id="showForm"
             aria-label="sumbit-order-button"
           >
-            Skicka beställning
+            Gå till kassan
           </button>
         </section>
       </section>
@@ -163,26 +163,46 @@
       </button>
     </section>
 
+    <!---Formulär-->
     <aside id="order-form" class="hidden">
       <div class="formsWrapper">
+        <h2 class="form-headline">Fyll i dina personuppgifter</h2>
         <form>
-          <!---Formulär-->
-          <label for="fname">Förnamn:</label>
-          <input type="text" id="nameField" placeholder="Förnamn" />
-          <label for="lname">Efternamn:</label>
-          <input type="text" id="lname" name="lname" placeholder="Efternamn" />
-          <label for="adress">Adress:</label>
-          <input type="text" id="adress" name="adresse" placeholder="Adress" />
-          <label for="postnummer">Postnummer:</label>
+          <label for="fname">Förnamn: <span class="req">*</span></label>
+          <input type="text" required id="nameField" placeholder="Förnamn" />
+          <label for="lname">Efternamn: <span class="req">*</span></label>
           <input
             type="text"
+            required
+            id="lname"
+            name="lname"
+            placeholder="Efternamn"
+          />
+          <label for="adress">Adress: <span class="req">*</span></label>
+          <input
+            type="text"
+            required
+            id="adress"
+            name="adresse"
+            placeholder="Adress"
+          />
+          <label for="postnummer">Postnummer: <span class="req">*</span></label>
+          <input
+            type="text"
+            required
             id="postnummer"
             name="zipcode"
             placeholder="Postnummer"
           />
-          <label for="stad">Stad:</label>
-          <input type="text" id="stad" name="city" placeholder="Stad" />
-          <label for="phone">Telefonnummer:</label>
+          <label for="stad">Stad: <span class="req">*</span></label>
+          <input
+            type="text"
+            required
+            id="stad"
+            name="city"
+            placeholder="Stad"
+          />
+          <label for="phone">Telefonnummer: <span class="req">*</span></label>
           <input
             type="tel"
             id="phone"
@@ -192,8 +212,9 @@
             minlength="10"
             maxlength="12"
           />
-          <label for="email">E-post:</label>
-          <input type="email" id="email" placeholder="E-post" /><br />
+          <label for="email">E-post: <span class="req">*</span></label>
+          <input type="email" required id="email" placeholder="E-post" /><br />
+          <h3>Välj betalsätt</h3>
           <input
             type="radio"
             id="cardRadio"
@@ -201,26 +222,34 @@
             value="Kort"
             class="cardButton"
           />
+
           <label for="card">Kort</label>
           <!---- Kortdetaljer. Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
           <div class="cardDetails" id="cardDetails">
-            <label for="cardNumber">Kortnummer:</label>
+            <label for="cardNumber"
+              >Kortnummer: <span class="req">*</span></label
+            >
             <input
               type="text"
+              required
               id="cardNumber"
               name="ccInfo"
               placeholder="Kortnummer"
             />
-            <label for="cardNumber">Giltighetstid:</label>
+            <label for="cardNumber"
+              >Giltighetstid: <span class="req">*</span></label
+            >
             <input
               type="text"
+              required
               id="yearMonth"
               name="ccInfo"
               placeholder="År/månad"
             />
-            <label for="cardNumber">CCV:</label>
+            <label for="cardNumber">cvc/cvv: <span class="req">*</span></label>
             <input
               type="text"
+              required
               id="cardNumber"
               name="ccInfo"
               placeholder="Kortnummer"
@@ -243,18 +272,12 @@
             >Klicka här för att godkänna
             <a href="#">användarvillkoren</a></label
           >
-          <input type="checkbox" id="usage" name="usage" />
+          <input type="checkbox" required id="usage" name="usage" />
           <br />
           <input type="reset" value="Rensa formulär" />
-          <input
-            type="submit"
-            id="submit"
-            class="pay-button"
-            value="Lägg beställning"
-            disabled="disabled"
-          />
+          <input type="submit" id="submit" class="pay-button" value="Betala" />
         </form>
-        <button id="close-form">Tillbaka</button>
+        <button class="close-form-btn" id="close-form">Stäng formulär</button>
       </div>
     </aside>
 
