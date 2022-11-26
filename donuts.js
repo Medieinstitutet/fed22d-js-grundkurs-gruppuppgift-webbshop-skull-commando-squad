@@ -201,6 +201,7 @@ function sortByNameStart() {
   renderDonuts();
   createEventListeners();
 }
+
 // Funktion för att sortera munkar efter namn
 function sortByNameEnd() {
   const sorted = donuts.sort((a, b) => {
