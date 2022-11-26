@@ -191,6 +191,7 @@ function renderDonuts() {
         </article>
     `;
   }
+
   createEventListeners();
 }
 
