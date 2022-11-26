@@ -8,8 +8,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/Chocolate-1.png",
     alt: "donut with chocolate glaze",
-    category: "goda munkar",
     description: "Smak av choklad",
+    category: ["goda munkar", "all"],
   },
   {
     name: "Vanilla Ice",
@@ -19,8 +19,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/vanilla-ice.png",
     alt: "donut with vanilla glaze",
-    category: "goda munkar",
     description: "Smak av vanilj",
+    category: ["goda munkar", "all"],
   },
   {
     name: "Strawberry Splash",
@@ -30,8 +30,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/strawberry.png",
     alt: "donut with strawberry glaze",
-    category: "goda munkar",
     description: "Smak av jordgubb",
+    category: ["goda munkar", "all"],
   },
   {
     name: "Salted Caramell",
@@ -41,8 +41,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/salted-caramell.png",
     alt: "donut made of fudge",
-    category: "goda munkar",
     description: "Smak av kola",
+    category: ["goda munkar", "all"],
   },
   {
     name: "American Breakfast",
@@ -52,8 +52,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/bacon.PNG",
     alt: "donut with bacon crust and glaze",
-    category: "köttmunkar",
     description: "Smak av bacon",
+    category: ["kött munkar", "all"],
   },
   {
     name: "Bloody Bastard",
@@ -63,8 +63,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/rib-eye.PNG",
     alt: "donut with meat filling",
-    category: "köttmunkar",
     description: "Smak av entrecote",
+    category: ["kött munkar", "all"],
   },
   {
     name: "Crispy Chicken",
@@ -74,8 +74,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/chicken.PNG",
     alt: "donut made of chicken with crust",
-    category: "köttmunkar",
     description: "Smak av krispig kyckling",
+    category: ["kött munkar", "all"],
   },
   {
     name: "Pulled Beef",
@@ -85,8 +85,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/pulled-beef.PNG",
     alt: "donut with pulled beef topping",
-    category: "köttmunkar",
     description: "Trådig och rökig",
+    category: ["kött munkar", "all"],
   },
   {
     name: "Water Cress",
@@ -96,8 +96,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/water-cress.png",
     alt: "green donut made of cress",
-    category: "växtbaserade munkar",
     description: "Pepprig och fräsch",
+    category: ["växt munkar", "all"],
   },
   {
     name: "Dandelion",
@@ -107,8 +107,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/dandelion.png",
     alt: "yellow donut made of flowers",
-    category: "växtbaserade munkar",
     description: "Smak av maskros",
+    category: ["växt munkar", "all"],
   },
   {
     name: "Corn Hole",
@@ -118,8 +118,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/corn-hole.PNG",
     alt: "a plastic ring with a corn in it",
-    category: "växt-baserade munkar",
     description: "Smak av majs och plast",
+    category: ["växt munkar", "all"],
   },
   {
     name: "Seaweed",
@@ -129,8 +129,8 @@ const donuts = [
     sum: 0,
     img: "assets/img/sea-weed.png",
     alt: "donut made of sea weed",
-    category: "växt-baserade munkar",
     description: "Stora inlag av umami",
+    category: ["växt munkar", "all"],
   },
 ];
 
