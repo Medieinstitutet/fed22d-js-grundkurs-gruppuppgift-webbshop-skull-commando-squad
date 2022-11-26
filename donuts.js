@@ -2,25 +2,25 @@
 const donuts = [
   {
     name: "Sexy Chocolate",
-    price: 15,
+    price: 30,
     rating: 3,
     amount: 0,
     sum: 0,
     img: "assets/img/Chocolate-1.png",
     alt: "donut with chocolate glaze",
     description: "Smak av choklad",
-    category: ["goda munkar", "all"],
+    category: ["tasty", "all"],
   },
   {
     name: "Vanilla Ice",
-    price: 20,
+    price: 25,
     rating: 1,
     amount: 0,
     sum: 0,
     img: "assets/img/vanilla-ice.png",
     alt: "donut with vanilla glaze",
     description: "Smak av vanilj",
-    category: ["goda munkar", "all"],
+    category: ["tasty", "all"],
   },
   {
     name: "Strawberry Splash",
@@ -31,7 +31,7 @@ const donuts = [
     img: "assets/img/strawberry.png",
     alt: "donut with strawberry glaze",
     description: "Smak av jordgubb",
-    category: ["goda munkar", "all"],
+    category: ["tasty", "all"],
   },
   {
     name: "Salted Caramell",
@@ -42,124 +42,132 @@ const donuts = [
     img: "assets/img/salted-caramell.png",
     alt: "donut made of fudge",
     description: "Smak av kola",
-    category: ["goda munkar", "all"],
+    category: ["tasty", "all"],
   },
   {
     name: "American Breakfast",
-    price: 55,
+    price: 45,
     rating: 5,
     amount: 0,
     sum: 0,
     img: "assets/img/bacon.PNG",
     alt: "donut with bacon crust and glaze",
     description: "Smak av bacon",
-    category: ["kött munkar", "all"],
+    category: ["meat", "all"],
   },
   {
     name: "Bloody Bastard",
-    price: 35,
+    price: 65,
     rating: 1,
     amount: 0,
     sum: 0,
     img: "assets/img/rib-eye.PNG",
     alt: "donut with meat filling",
     description: "Smak av entrecote",
-    category: ["kött munkar", "all"],
+    category: ["meat", "all"],
   },
   {
     name: "Crispy Chicken",
-    price: 35,
+    price: 75,
     rating: 3,
     amount: 0,
     sum: 0,
     img: "assets/img/chicken.PNG",
     alt: "donut made of chicken with crust",
     description: "Smak av krispig kyckling",
-    category: ["kött munkar", "all"],
+    category: ["meat", "all"],
   },
   {
     name: "Pulled Beef",
-    price: 45,
+    price: 55,
     rating: 4,
     amount: 0,
     sum: 0,
     img: "assets/img/pulled-beef.PNG",
     alt: "donut with pulled beef topping",
     description: "Trådig och rökig",
-    category: ["kött munkar", "all"],
+    category: ["meat", "all"],
   },
   {
     name: "Water Cress",
-    price: 60,
+    price: 80,
     rating: 1,
     amount: 0,
     sum: 0,
     img: "assets/img/water-cress.png",
     alt: "green donut made of cress",
     description: "Pepprig och fräsch",
-    category: ["växt munkar", "all"],
+    category: ["plant", "all"],
   },
   {
     name: "Dandelion",
-    price: 45,
+    price: 95,
     rating: 2,
     amount: 0,
     sum: 0,
     img: "assets/img/dandelion.png",
     alt: "yellow donut made of flowers",
     description: "Smak av maskros",
-    category: ["växt munkar", "all"],
+    category: ["plant", "all"],
   },
   {
     name: "Corn Hole",
-    price: 60,
+    price: 100,
     rating: 5,
     amount: 0,
     sum: 0,
     img: "assets/img/corn-hole.PNG",
     alt: "a plastic ring with a corn in it",
     description: "Smak av majs och plast",
-    category: ["växt munkar", "all"],
+    category: ["plant", "all"],
   },
   {
     name: "Seaweed",
-    price: 25,
+    price: 20,
     rating: 1,
     amount: 0,
     sum: 0,
     img: "assets/img/sea-weed.png",
     alt: "donut made of sea weed",
     description: "Stora inlag av umami",
-    category: ["växt munkar", "all"],
+    category: ["plant", "all"],
   },
 ];
 
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
-
 // Deklarerar variablar för sorting knappar av namn
 const sortByNameBtnStart = document.querySelector(".nameSortStart");
 const sortByNameBtnEnd = document.querySelector(".nameSortEnd");
-
 // Deklarerar variablar för sorting knappar av rating
 const sortByRatingBtnStart = document.querySelector(".ratingSortStart");
 const sortByRatingBtnEnd = document.querySelector(".ratingSortEnd");
-
 // eventlistener för knappar av rating sortering
 sortByRatingBtnStart.addEventListener("click", sortByRatingStart);
 sortByRatingBtnEnd.addEventListener("click", sortByRatingEnd);
-
 // Deklarerar variablar för sorting knappar av pris
 const sortByPriceBtnStart = document.querySelector(".priceSortStart");
 const sortByPriceBtnEnd = document.querySelector(".priceSortEnd");
-
-// eventlistener för knappar av pris sortering
-sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
-sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
+// deklarerar varibel category filter
+const categoryFilterRadio = document.querySelectorAll(
+  '[name="categoryFilter"]'
+);
+// deklarerar variabel för price range slider
+const priceRangeSlider = document.querySelector("#priceRange");
+const currentRangeValue = document.querySelector("#currentRangeValue");
+// Deklarerar variabel för temp array för donuts
+let filteredDonuts = [...donuts];
+let filteredDonutsInPriceRange = [...donuts];
 
 // eventlistener för knappar av namn sortering
 sortByNameBtnStart.addEventListener("click", sortByNameStart);
 sortByNameBtnEnd.addEventListener("click", sortByNameEnd);
+priceRangeSlider.addEventListener("input", changePriceRange);
+// eventlistener för knappar av pris sortering
+sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
+sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
+
+// funktion för att skriva ut munkar i HTML.
 
 //Funktion för att skriva ut munk objekt via for loop
 function renderDonuts() {
@@ -183,6 +191,7 @@ function renderDonuts() {
         </article>
     `;
   }
+  createEventListeners();
 }
 
 // Funktion för att sortera munkar efter namn
@@ -199,7 +208,6 @@ function sortByNameStart() {
   });
 
   renderDonuts();
-  createEventListeners();
 }
 
 // Funktion för att sortera munkar efter namn
@@ -216,32 +224,72 @@ function sortByNameEnd() {
   });
 
   renderDonuts();
-  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
   donuts.sort((a, b) => a.rating - b.rating);
   renderDonuts();
-  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
   renderDonuts();
-  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceStart() {
   donuts.sort((a, b) => a.price - b.price);
   renderDonuts();
-  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceEnd() {
   donuts.sort((a, b) => b.price - a.price);
   renderDonuts();
-  createEventListeners();
 }
 
-// kallar skriva ut munkar funktionen
+function changePriceRange() {
+  const currentPrice = priceRangeSlider.value;
+  currentRangeValue.innerHTML = currentPrice;
+
+  filteredDonutsInPriceRange = filteredDonuts.filter(
+    (donuts) => donuts.price <= currentPrice
+  );
+  renderDonuts();
+}
+
+/**
+ * uppdatera vilka munkar som syns efter filtrering
+ */
+
+// kategorier ['goda munkar', 'kött munkar', 'växt munkar']
+function updateCategoryFilter(e) {
+  // hämta värdet från radio knapp
+  const selectedCategory = e.currentTarget.value;
+
+  if (selectedCategory === "all") {
+    filteredDonuts = [...donuts]; // kopiera urspungs array
+  } else {
+    filteredDonuts = []; // töm array med filtered donuts
+
+    // loopa igenom alla munkar
+  }
+  for (let i = 0; i < donuts.length; i++) {
+    const donut = donuts[i];
+
+    // gör om alla donuts till lowercase
+    const categoriesInLowerCase = [];
+    for (let j = 0; j < donut.category.length; j++) {
+      categoriesInLowerCase.push(donut.category[j].toLocaleLowerCase());
+    }
+    // kolla om vald kategori finns med i listan
+    if (categoriesInLowerCase.indexOf(selectedCategory) > -1) {
+      filteredDonuts.push(donut);
+    }
+  }
+}
+
+for (let i = 0; i < categoryFilterRadio.length; i++) {
+  categoryFilterRadio[i].addEventListener("click", updateCategoryFilter);
+}
+
+changePriceRange();
 renderDonuts();
