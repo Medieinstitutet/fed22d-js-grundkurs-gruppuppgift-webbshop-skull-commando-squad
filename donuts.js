@@ -136,18 +136,23 @@ const donuts = [
 
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
+
 // Deklarerar variablar för sorting knappar av namn
 const sortByNameBtnStart = document.querySelector(".nameSortStart");
 const sortByNameBtnEnd = document.querySelector(".nameSortEnd");
+
 // Deklarerar variablar för sorting knappar av rating
 const sortByRatingBtnStart = document.querySelector(".ratingSortStart");
 const sortByRatingBtnEnd = document.querySelector(".ratingSortEnd");
+
 // eventlistener för knappar av rating sortering
 sortByRatingBtnStart.addEventListener("click", sortByRatingStart);
 sortByRatingBtnEnd.addEventListener("click", sortByRatingEnd);
+
 // Deklarerar variablar för sorting knappar av pris
 const sortByPriceBtnStart = document.querySelector(".priceSortStart");
 const sortByPriceBtnEnd = document.querySelector(".priceSortEnd");
+
 // deklarerar varibel category filter
 const categoryFilterRadio = document.querySelectorAll(
   '[name="categoryFilter"]'
@@ -155,6 +160,7 @@ const categoryFilterRadio = document.querySelectorAll(
 // deklarerar variabel för price range slider
 const priceRangeSlider = document.querySelector("#priceRange");
 const currentRangeValue = document.querySelector("#currentRangeValue");
+
 // Deklarerar variabel för temp array för donuts
 let filteredDonuts = [...donuts];
 let filteredDonutsInPriceRange = [...donuts];
@@ -163,13 +169,12 @@ let filteredDonutsInPriceRange = [...donuts];
 sortByNameBtnStart.addEventListener("click", sortByNameStart);
 sortByNameBtnEnd.addEventListener("click", sortByNameEnd);
 priceRangeSlider.addEventListener("input", changePriceRange);
+
 // eventlistener för knappar av pris sortering
 sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
 sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
 
-// funktion för att skriva ut munkar i HTML.
-
-//Funktion för att skriva ut munk objekt via for loop
+// funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   donutContainer.innerHTML = "";
 
@@ -191,11 +196,9 @@ function renderDonuts() {
         </article>
     `;
   }
-
-  createEventListeners();
 }
 
-// Funktion för att sortera munkar efter namn
+// Funktion för att sortera munkar efter namn a-z
 function sortByNameStart() {
   const sorted = donuts.sort((a, b) => {
     if (a.name < b.name) {
@@ -209,9 +212,10 @@ function sortByNameStart() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
 
-// Funktion för att sortera munkar efter namn
+// Funktion för att sortera munkar efter namn z-a
 function sortByNameEnd() {
   const sorted = donuts.sort((a, b) => {
     if (a.name > b.name) {
@@ -225,26 +229,31 @@ function sortByNameEnd() {
   });
 
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
   donuts.sort((a, b) => a.rating - b.rating);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
   donuts.sort((a, b) => b.rating - a.rating);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceStart() {
   donuts.sort((a, b) => a.price - b.price);
   renderDonuts();
+  createEventListeners();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceEnd() {
   donuts.sort((a, b) => b.price - a.price);
   renderDonuts();
+  createEventListeners();
 }
 
 function changePriceRange() {
@@ -254,6 +263,7 @@ function changePriceRange() {
   filteredDonutsInPriceRange = filteredDonuts.filter(
     (donuts) => donuts.price <= currentPrice
   );
+  console.log(currentPrice);
   renderDonuts();
 }
 
@@ -265,6 +275,7 @@ function changePriceRange() {
 function updateCategoryFilter(e) {
   // hämta värdet från radio knapp
   const selectedCategory = e.currentTarget.value;
+  console.log(selectedCategory);
 
   if (selectedCategory === "all") {
     filteredDonuts = [...donuts]; // kopiera urspungs array
@@ -286,11 +297,11 @@ function updateCategoryFilter(e) {
       filteredDonuts.push(donut);
     }
   }
+  changePriceRange();
 }
 
 for (let i = 0; i < categoryFilterRadio.length; i++) {
   categoryFilterRadio[i].addEventListener("click", updateCategoryFilter);
 }
 
-changePriceRange();
 renderDonuts();

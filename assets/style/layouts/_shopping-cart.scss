@@ -23,8 +23,7 @@
   position: fixed;
   top: 210px;
   width: 100%;
-  transition: 0.5s;
-  left: -200%;
+  visibility: hidden;
   background-color: white;
   overflow-y: auto;
 }
@@ -96,5 +95,5 @@ button:hover {
 }
 
 .shopping-cart-menu.active {
-  left: 0;
+  visibility: visible;
 }
