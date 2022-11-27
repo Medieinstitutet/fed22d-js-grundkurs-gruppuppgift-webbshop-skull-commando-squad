@@ -26,6 +26,8 @@
   visibility: hidden;
   background-color: white;
   overflow-y: auto;
+  left: -200%;
+  transition: 0.5s;
 }
 
 .shopping-cart-object {
@@ -96,4 +98,5 @@ button:hover {
 
 .shopping-cart-menu.active {
   visibility: visible;
+  left: 0;
 }
