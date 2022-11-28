@@ -19,8 +19,8 @@ function changePriceRange() {
   filteredDonutsInPriceRange = filteredDonuts.filter(
     (donuts) => donuts.price <= currentPrice
   );
-  console.log(currentPrice);
   renderDonuts();
+  console.log(currentPrice);
 }
 
 /**
@@ -54,6 +54,7 @@ function updateCategoryFilter(e) {
     }
   }
   changePriceRange();
+  renderDonuts();
 }
 
 for (let i = 0; i < categoryFilterRadio.length; i++) {

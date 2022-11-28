@@ -159,6 +159,7 @@ function renderDonuts() {
         </article>
     `;
   }
+  createEventListeners();
 }
 
 renderDonuts();

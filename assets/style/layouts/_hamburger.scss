@@ -1,4 +1,4 @@
-.donut-nav {
+.sort-nav {
   min-height: 50px;
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   }
 }
 
-.donut-nav-menu {
+.sort-nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,7 +58,7 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .donut-nav-menu {
+  .sort-nav-menu {
     position: fixed;
     left: -100%;
     visibility: hidden;
@@ -73,7 +73,7 @@
     outline: 1px solid black;
   }
 
-  .donut-nav-menu.active {
+  .sort-nav-menu.active {
     left: 0;
     visibility: visible;
   }

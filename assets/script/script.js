@@ -3,7 +3,7 @@
 // deklarerar en hamburger variabel
 const hamburger = document.querySelector(".hamburger");
 // deklarerar en menu variabel
-const navMenu = document.querySelector(".donut-nav-menu");
+const navMenu = document.querySelector(".sort-nav-menu");
 
 // skapar en klick funktion till hamburger och menu för att aktiveras
 hamburger.addEventListener("click", openMenu);
