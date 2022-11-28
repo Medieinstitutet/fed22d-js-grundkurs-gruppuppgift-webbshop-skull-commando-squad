@@ -6,10 +6,6 @@ const categoryFilterRadio = document.querySelectorAll(
 const priceRangeSlider = document.querySelector("#priceRange");
 const currentRangeValue = document.querySelector("#currentRangeValue");
 
-// Deklarerar variabel för temp array för donuts
-let filteredDonuts = [...donuts];
-let filteredDonutsInPriceRange = [...donuts];
-
 priceRangeSlider.addEventListener("input", changePriceRange);
 
 function changePriceRange() {

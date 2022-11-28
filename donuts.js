@@ -145,6 +145,9 @@ const donuts = [
     category: ["plant", "all"],
   },
 ];
+// Deklarerar variabel för temp array för donuts
+let filteredDonuts = [...donuts];
+let filteredDonutsInPriceRange = [...donuts];
 
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
