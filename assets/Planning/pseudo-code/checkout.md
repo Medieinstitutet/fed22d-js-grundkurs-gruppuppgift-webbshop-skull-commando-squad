@@ -16,12 +16,12 @@ x finns i varukorgen
 x öppnas när man trycker på beställningsknappen
 
 - här finns en sammanställning ink rabattkoder och övriga rabatter
-- om kunden har beställt för mer än 800kr så kan man inte betala med faktura (hidden)
+- om kunden har beställt för mer än 800kr så kan man inte betala med faktura (disabled)
 - när kunden har fyllt i allt och är klarbetald så ska kunden få en leveransbekräftelse
 
 Rabatter med datumvillkor och timers:
 
-- På måndagar innan kl. 10 ges 10 % rabatt på hela beställningssumman. Detta visas i varukorgssammanställningen som en rad med texten "Måndagsrabatt: 10 % på hela beställningen".
+x På måndagar innan kl. 10 ges 10 % rabatt på hela beställningssumman. Detta visas i varukorgssammanställningen som en rad med texten "Måndagsrabatt: 10 % på hela beställningen".
 
 - På fredagar efter kl. 15 och fram till natten mellan söndag och måndag kl. 03.00 tillkommer ett helgpåslag på 15 % på alla munkar. Detta ska inte framgå för kunden att munkarna är dyrare, utan priset ska bara vara högre i "utskriften" av munkarna.
 
