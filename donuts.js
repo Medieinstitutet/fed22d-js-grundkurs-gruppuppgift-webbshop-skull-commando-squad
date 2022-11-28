@@ -2,6 +2,7 @@
 const donuts = [
   {
     name: "Sexy Chocolate",
+    id: 0,
     price: 30,
     rating: 3,
     amount: 0,
@@ -13,6 +14,7 @@ const donuts = [
   },
   {
     name: "Vanilla Ice",
+    id: 1,
     price: 25,
     rating: 1,
     amount: 0,
@@ -24,6 +26,7 @@ const donuts = [
   },
   {
     name: "Strawberry Splash",
+    id: 2,
     price: 35,
     rating: 5,
     amount: 0,
@@ -35,6 +38,7 @@ const donuts = [
   },
   {
     name: "Salted Caramell",
+    id: 3,
     price: 45,
     rating: 4,
     amount: 0,
@@ -46,6 +50,7 @@ const donuts = [
   },
   {
     name: "American Breakfast",
+    id: 4,
     price: 45,
     rating: 5,
     amount: 0,
@@ -57,6 +62,7 @@ const donuts = [
   },
   {
     name: "Bloody Bastard",
+    id: 5,
     price: 65,
     rating: 1,
     amount: 0,
@@ -68,6 +74,7 @@ const donuts = [
   },
   {
     name: "Crispy Chicken",
+    id: 6,
     price: 75,
     rating: 3,
     amount: 0,
@@ -79,6 +86,7 @@ const donuts = [
   },
   {
     name: "Pulled Beef",
+    id: 7,
     price: 55,
     rating: 4,
     amount: 0,
@@ -90,6 +98,7 @@ const donuts = [
   },
   {
     name: "Water Cress",
+    id: 8,
     price: 80,
     rating: 1,
     amount: 0,
@@ -101,6 +110,7 @@ const donuts = [
   },
   {
     name: "Dandelion",
+    id: 9,
     price: 95,
     rating: 2,
     amount: 0,
@@ -112,6 +122,7 @@ const donuts = [
   },
   {
     name: "Corn Hole",
+    id: 10,
     price: 100,
     rating: 5,
     amount: 0,
@@ -123,6 +134,7 @@ const donuts = [
   },
   {
     name: "Seaweed",
+    id: 11,
     price: 20,
     rating: 1,
     amount: 0,
@@ -141,20 +153,20 @@ const donutContainer = document.querySelector(".donutContainer");
 function renderDonuts() {
   donutContainer.innerHTML = "";
 
-  for (let i = 0; i < donuts.length; i++) {
+  for (let i = 0; i < filteredDonuts.length; i++) {
     donutContainer.innerHTML += `
-        <h2>${donuts[i].name}</h2>
+        <h2>${filteredDonuts[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${donuts[i].img}" width="200" height="200" loading="lazy" alt="${donuts[i].alt}"/>
+            <img src="${filteredDonuts[i].img}" width="200" height="200" loading="lazy" alt="${filteredDonuts[i].alt}"/>
           </section>
           <section class="donut-info">
-             <span>${donuts[i].description}</span><br/>
-             Pris/st: <span class="sum">${donuts[i].price}</span> kr<br />
-              Antal i varukorgen: <span class="amount">${donuts[i].amount}</span> st<br/>
-              Summa: <span class="sum">${donuts[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${i}" aria-label="decrease-item-button">-</button>
-            <button data-operator="plus" data-id="${i}" arira-label="increase-item-button">+</button>
+             <span>${filteredDonuts[i].description}</span><br/>
+             Pris/st: <span class="sum">${filteredDonuts[i].price}</span> kr<br />
+              Antal i varukorgen: <span class="amount">${filteredDonuts[i].amount}</span> st<br/>
+              Summa: <span class="sum">${filteredDonuts[i].sum}</span> kr<br />
+            <button data-operator="minus" data-id="${filteredDonuts[i].id}" aria-label="decrease-item-button">-</button>
+            <button data-operator="plus" data-id="${filteredDonuts[i].id}" arira-label="increase-item-button">+</button>
           </section>
         </article>
     `;
