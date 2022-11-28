@@ -153,20 +153,20 @@ const donutContainer = document.querySelector(".donutContainer");
 function renderDonuts() {
   donutContainer.innerHTML = "";
 
-  for (let i = 0; i < filteredDonuts.length; i++) {
+  for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     donutContainer.innerHTML += `
-        <h2>${filteredDonuts[i].name}</h2>
+        <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <article class="donut">
           <section class="donut-img">
-            <img src="${filteredDonuts[i].img}" width="200" height="200" loading="lazy" alt="${filteredDonuts[i].alt}"/>
+            <img src="${filteredDonutsInPriceRange[i].img}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
           </section>
           <section class="donut-info">
-             <span>${filteredDonuts[i].description}</span><br/>
-             Pris/st: <span class="sum">${filteredDonuts[i].price}</span> kr<br />
-              Antal i varukorgen: <span class="amount">${filteredDonuts[i].amount}</span> st<br/>
-              Summa: <span class="sum">${filteredDonuts[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${filteredDonuts[i].id}" aria-label="decrease-item-button">-</button>
-            <button data-operator="plus" data-id="${filteredDonuts[i].id}" arira-label="increase-item-button">+</button>
+             <span>${filteredDonutsInPriceRange[i].description}</span><br/>
+             Pris/st: <span class="sum">${filteredDonutsInPriceRange[i].price}</span> kr<br />
+              Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
+              Summa: <span class="sum">${filteredDonutsInPriceRange[i].sum}</span> kr<br />
+            <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="decrease-item-button">-</button>
+            <button data-operator="plus" data-id="${filteredDonutsInPriceRange[i].id}" arira-label="increase-item-button">+</button>
           </section>
         </article>
     `;

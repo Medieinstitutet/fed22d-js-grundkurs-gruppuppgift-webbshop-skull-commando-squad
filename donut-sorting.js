@@ -24,7 +24,7 @@ sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
 
 // Funktion för att sortera munkar efter namn a-z
 function sortByNameStart() {
-  const sorted = filteredDonuts.sort((a, b) => {
+  const sorted = filteredDonutsInPriceRange.sort((a, b) => {
     if (a.name < b.name) {
       return -1;
     }
@@ -40,7 +40,7 @@ function sortByNameStart() {
 
 // Funktion för att sortera munkar efter namn z-a
 function sortByNameEnd() {
-  const sorted = filteredDonuts.sort((a, b) => {
+  const sorted = filteredDonutsInPriceRange.sort((a, b) => {
     if (a.name > b.name) {
       return -1;
     }
@@ -55,21 +55,21 @@ function sortByNameEnd() {
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingStart() {
-  filteredDonuts.sort((a, b) => a.rating - b.rating);
+  filteredDonutsInPriceRange.sort((a, b) => a.rating - b.rating);
   renderDonuts();
 }
 // Funktion för att sortera munkar efter rating
 function sortByRatingEnd() {
-  filteredDonuts.sort((a, b) => b.rating - a.rating);
+  filteredDonutsInPriceRange.sort((a, b) => b.rating - a.rating);
   renderDonuts();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceStart() {
-  filteredDonuts.sort((a, b) => a.price - b.price);
+  filteredDonutsInPriceRange.sort((a, b) => a.price - b.price);
   renderDonuts();
 }
 // Funktion för att sortera munkar efter pris
 function sortByPriceEnd() {
-  filteredDonuts.sort((a, b) => b.price - a.price);
+  filteredDonutsInPriceRange.sort((a, b) => b.price - a.price);
   renderDonuts();
 }
