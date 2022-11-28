@@ -37,22 +37,23 @@ function updateCategoryFilter(e) {
     filteredDonuts = [...donuts]; // kopiera urspungs array
   } else {
     filteredDonuts = []; // töm array med filtered donuts
+    for (let i = 0; i < donuts.length; i++) {
+      const donut = donuts[i];
+
+      // gör om alla donuts till lowercase
+      const categoriesInLowerCase = [];
+      for (let j = 0; j < donut.category.length; j++) {
+        categoriesInLowerCase.push(donut.category[j].toLocaleLowerCase());
+      }
+      // kolla om vald kategori finns med i listan
+      if (categoriesInLowerCase.indexOf(selectedCategory) > -1) {
+        filteredDonuts.push(donut);
+      }
+    }
 
     // loopa igenom alla munkar
   }
-  for (let i = 0; i < donuts.length; i++) {
-    const donut = donuts[i];
 
-    // gör om alla donuts till lowercase
-    const categoriesInLowerCase = [];
-    for (let j = 0; j < donut.category.length; j++) {
-      categoriesInLowerCase.push(donut.category[j].toLocaleLowerCase());
-    }
-    // kolla om vald kategori finns med i listan
-    if (categoriesInLowerCase.indexOf(selectedCategory) > -1) {
-      filteredDonuts.push(donut);
-    }
-  }
   changePriceRange();
   renderDonuts();
 }
