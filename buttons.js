@@ -26,7 +26,7 @@ function increaseCount(e) {
 
   renderDonuts();
   updateCart();
-  createEventListeners();
+
   printItemsInCart();
 }
 
@@ -40,7 +40,7 @@ function decreaseCount(e) {
     donuts[id].sum = donuts[id].amount * donuts[id].price;
     renderDonuts();
     updateCart();
-    createEventListeners();
+
     printItemsInCart();
   }
 }
@@ -52,6 +52,6 @@ function removeCartItem(e) {
   donuts[id].sum = 0;
   renderDonuts();
   updateCart();
-  createEventListeners();
+
   printItemsInCart();
 }

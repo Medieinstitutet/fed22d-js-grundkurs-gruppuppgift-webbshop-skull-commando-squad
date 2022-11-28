@@ -59,4 +59,5 @@ function updateCart() {
 `;
     }
   }
+  createEventListeners();
 }
