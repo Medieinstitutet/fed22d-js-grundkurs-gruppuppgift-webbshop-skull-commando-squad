@@ -157,17 +157,17 @@ function renderDonuts() {
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <article class="donut">
-          <section class="donut-img">
+          <div class="donut-img">
             <img src="${filteredDonutsInPriceRange[i].img}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
-          </section>
-          <section class="donut-info">
+          </div>
+          <div class="donut-info">
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
              Pris/st: <span class="sum">${filteredDonutsInPriceRange[i].price}</span> kr<br />
               Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
               Summa: <span class="sum">${filteredDonutsInPriceRange[i].sum}</span> kr<br />
             <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="decrease-item-button">-</button>
             <button data-operator="plus" data-id="${filteredDonutsInPriceRange[i].id}" arira-label="increase-item-button">+</button>
-          </section>
+          </div>
         </article>
     `;
   }

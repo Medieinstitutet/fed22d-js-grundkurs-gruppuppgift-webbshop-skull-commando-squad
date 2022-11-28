@@ -31,14 +31,14 @@ function updateCart() {
     if (donuts[i].amount > 0) {
       shoppingCartMenu.innerHTML += `
      
-      <section class="cart-info">
-        <section class="cart-img">
+      <div class="cart-info">
+        <div class="cart-img">
           <img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
-        </section>
-        <section class="cart-item-name">
+        </div>
+        <div class="cart-item-name">
           ${donuts[i].name}
-        </section>
-        <section class="cart-item-amount">
+        </div>
+        <div class="cart-item-amount">
           ${donuts[i].amount} st
           <button data-operator="minus" data-id="${i}" class="cart-minus-butn" aria-label="decrease-item-button">
           -
@@ -46,16 +46,16 @@ function updateCart() {
           <button data-operator="plus" data-id="${i}" class="cart-plus-btn" aria-label="increase-item-button">
           +
           </button>
-        </section>
-        <section class="cart-item-sum"> 
+        </div>
+        <div class="cart-item-sum"> 
           ${donuts[i].sum} kr
-        </section>
-        <section class="remove-cart-item">
+        </div>
+        <div class="remove-cart-item">
           <button data-id="${i}" class="remove-cart-item" aria-label="remove-item-button">
             <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
-        </section>
-      </section>
+        </div>
+      </div>
 `;
     }
   }
