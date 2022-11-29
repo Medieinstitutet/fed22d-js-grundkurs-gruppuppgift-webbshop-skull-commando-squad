@@ -149,6 +149,8 @@ const donuts = [
 let filteredDonuts = [...donuts];
 let filteredDonutsInPriceRange = [...donuts];
 
+let totalSum = 0;
+
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 

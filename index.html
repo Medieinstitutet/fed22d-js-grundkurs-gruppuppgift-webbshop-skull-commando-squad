@@ -142,7 +142,7 @@
     <aside id="order-form" class="hidden">
       <div class="formsWrapper">
         <h2 class="form-headline">Fyll i dina personuppgifter</h2>
-        <form>
+        <form id="form">
           <label for="fname">Förnamn: <span class="req">*</span></label>
           <input type="text" required id="nameField" placeholder="Förnamn" />
           <label for="lname">Efternamn: <span class="req">*</span></label>
@@ -193,10 +193,12 @@
           <label for="rebateCode">Fyll i din rabattkod:</label>
           <input
             type="text"
-            id="rebateCode"
-            name="rebateCode"
+            id="rebate-code"
+            name="rebate-code"
             placeholder="Rabattkod"
           />
+          <button type="button" id="rebate-btn">Lägg till rabattkod</button>
+
           <h3>Välj betalsätt</h3>
           <input
             type="radio"
@@ -214,7 +216,6 @@
             >
             <input
               type="text"
-              required
               id="cardNumber"
               name="ccInfo"
               placeholder="Kortnummer"
@@ -224,7 +225,6 @@
             >
             <input
               type="text"
-              required
               id="yearMonth"
               name="ccInfo"
               placeholder="År/månad"
@@ -232,7 +232,6 @@
             <label for="cardNumber">cvc/cvv: <span class="req">*</span></label>
             <input
               type="text"
-              required
               id="cardNumber"
               name="ccInfo"
               placeholder="Kortnummer"
@@ -249,6 +248,19 @@
             value="Faktura"
           />
           <label for="invoice">Faktura</label><br />
+          <div class="invoiceDetails" id="invoiceDetails">
+            <label for="phone"
+              >Fyll i ditt personnummer: <span class="req">*</span></label
+            >
+            <input
+              type="text"
+              id="persnr"
+              name="persnr"
+              placeholder="XXXXXX-XXXX"
+              minlength="11"
+              maxlength="13"
+            />
+          </div>
           <label for="reklam">Vill du prenumerera på vårt nyhetsbrev?</label>
           <input type="checkbox" id="reklam" name="newsLetter" checked /><br />
           <label for="usage"
@@ -263,6 +275,7 @@
         <button class="close-form-btn" id="close-form">Stäng formulär</button>
       </div>
     </aside>
+    <div class="hidden" id="summaryPage"></div>
 
     <main>
       <section class="donutContainer"></section>

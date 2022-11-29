@@ -18,7 +18,7 @@ function createEventListeners() {
     removeCartItemBtns[i].addEventListener("click", removeCartItem);
   }
 }
-// funktion för att addera antal munkar med plusknappen och uppdatera totalsumman
+// funktion för att addera antal munkar med plusknappen och
 function increaseCount(e) {
   const id = e.currentTarget.dataset.id;
   donuts[id].amount = donuts[id].amount + 1;
