@@ -3,7 +3,7 @@ const donuts = [
   {
     name: "Sexy Chocolate",
     id: 0,
-    price: 30,
+    price: getDonutPrice(30),
     rating: 3,
     amount: 0,
     sum: 0,
@@ -15,7 +15,7 @@ const donuts = [
   {
     name: "Vanilla Ice",
     id: 1,
-    price: 25,
+    price: getDonutPrice(25),
     rating: 1,
     amount: 0,
     sum: 0,
@@ -27,7 +27,7 @@ const donuts = [
   {
     name: "Strawberry Splash",
     id: 2,
-    price: 35,
+    price: getDonutPrice(35),
     rating: 5,
     amount: 0,
     sum: 0,
@@ -39,7 +39,7 @@ const donuts = [
   {
     name: "Salted Caramell",
     id: 3,
-    price: 45,
+    price: getDonutPrice(45),
     rating: 4,
     amount: 0,
     sum: 0,
@@ -51,7 +51,7 @@ const donuts = [
   {
     name: "American Breakfast",
     id: 4,
-    price: 45,
+    price: getDonutPrice(45),
     rating: 5,
     amount: 0,
     sum: 0,
@@ -63,7 +63,7 @@ const donuts = [
   {
     name: "Bloody Bastard",
     id: 5,
-    price: 65,
+    price: getDonutPrice(65),
     rating: 1,
     amount: 0,
     sum: 0,
@@ -76,7 +76,7 @@ const donuts = [
   {
     name: "Crispy Chicken",
     id: 6,
-    price: 75,
+    price: getDonutPrice(75),
     rating: 3,
     amount: 0,
     sum: 0,
@@ -88,7 +88,7 @@ const donuts = [
   {
     name: "Pulled Beef",
     id: 7,
-    price: 55,
+    price: getDonutPrice(55),
     rating: 4,
     amount: 0,
     sum: 0,
@@ -100,7 +100,7 @@ const donuts = [
   {
     name: "Water Cress",
     id: 8,
-    price: 80,
+    price: getDonutPrice(80),
     rating: 1,
     amount: 0,
     sum: 0,
@@ -112,7 +112,7 @@ const donuts = [
   {
     name: "Dandelion",
     id: 9,
-    price: 95,
+    price: getDonutPrice(95),
     rating: 2,
     amount: 0,
     sum: 0,
@@ -124,7 +124,7 @@ const donuts = [
   {
     name: "Corn Hole",
     id: 10,
-    price: 100,
+    price: getDonutPrice(100),
     rating: 5,
     amount: 0,
     sum: 0,
@@ -136,7 +136,7 @@ const donuts = [
   {
     name: "Seaweed",
     id: 11,
-    price: 20,
+    price: getDonutPrice(20),
     rating: 1,
     amount: 0,
     sum: 0,
@@ -161,19 +161,41 @@ const nextBtns = document.querySelectorAll("button.next");
 
 // funktion för byta bakgrundsbilden på julafton
 function christmasImg() {
-  let date1 = new Date();
-  let date2 = new Date("dec 24 2022");
-  if (date1.getDate() === date2.getDate()) {
+  if (isChristmas()) {
     document.body.style.backgroundImage =
       "url('assets/img/christmas-gf9f1474a9_1280.png')";
   }
 }
 christmasImg();
 
+//funktion för att beräkna på originalpris
+function getDonutPrice(originalPrice) {
+  const now = new Date();
+  const day = now.getDay();
+  const hours = now.getHours();
+  // prispåslag om helg
+  if (
+    (day === 5 && hours >= 15) ||
+    day === 6 ||
+    day === 0 ||
+    (day === 1 && hours < 3)
+  ) {
+    return originalPrice * 1.15;
+  }
+  return originalPrice;
+}
+
+// allmän function  som kollar om det är julafton (pris blir rött)
+function isChristmas() {
+  let date1 = new Date();
+  let date2 = new Date("dec 24 2022");
+  return date1.getDate() === date2.getDate();
+}
+
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
+  const priceClasses = isChristmas() ? "sum red-price" : "sum";
   donutContainer.innerHTML = "";
-
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i].img;
     donutContainer.innerHTML += `
@@ -184,7 +206,7 @@ function renderDonuts() {
           </div>
           <div class="donut-info">
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
-             Pris/st: <span class="sum">${filteredDonutsInPriceRange[i].price}</span> kr<br />
+             Pris/st: <span class="${priceClasses}">${filteredDonutsInPriceRange[i].price}</span> kr<br />
               Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
               Summa: <span class="sum">${filteredDonutsInPriceRange[i].sum}</span> kr<br />
             <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}">-</button>
