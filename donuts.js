@@ -152,25 +152,35 @@ let filteredDonutsInPriceRange = [...donuts];
 
 let totalSum = 0;
 
+let currentImageIndex = -1;
+
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 
-// Deklarerar variabel för karusellknappar
-const prevBtns = document.querySelectorAll('button.prev');
-const nextBtns = document.querySelectorAll('button.next');
+
+
+function prevImage() {
+  console.log('Föregående')
+}
+
+function nextClick() {
+  console.log('nästa')
+}
 
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   donutContainer.innerHTML = "";
-
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i].img
+    for (let j = 0; j < imgs.length -1; j++)
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img src="${imgs[1]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
+            <img id=imageOne src="${imgs[j]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
+            <button onclick="prevImage()">Föregående</button>
+            <button onclick="nextClick()">Nästa</button>
           </div>
           <div class="donut-info">
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
@@ -182,27 +192,10 @@ function renderDonuts() {
           </div>
         </div>
     `;
-  }
   createEventListeners();
 }
-
-
-prevBtns.forEach(btn =>{
-  btn.addEventListener('click', prevImage)
-  console.dir(e.currentTarget.id);
-});
-
-nextBtns.forEach(btn =>{
-  btn.addEventListener('click', nextImage)
-  console.dir(e.currentTarget.id);
-});
-function nextImage(e){
-  console.dir(e.currentTarget.id);
 }
 
-function prevImage(e){
-  console.dir(e.currentTarget.id);
-}
 
 
 renderDonuts();
