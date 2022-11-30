@@ -152,20 +152,10 @@ let filteredDonutsInPriceRange = [...donuts];
 
 let totalSum = 0;
 
-let currentImageIndex = -1;
-
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 
 
-
-function prevImage() {
-  console.log('Föregående')
-}
-
-function nextClick() {
-  console.log('nästa')
-}
 
 // funktion för byta bakgrundsbilden på julafton
 function christmasImg() {
@@ -178,19 +168,22 @@ function christmasImg() {
 }
 christmasImg();
 
+
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   donutContainer.innerHTML = "";
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i].img
-    for (let j = 0; j < imgs.length -1; j++)
+    const imageOne = document.querySelector('#imageOne')
+const imageTwo = document.querySelector('#imageTwo')
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img id=imageOne src="${imgs[j]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
-            <button onclick="prevImage()">Föregående</button>
-            <button onclick="nextClick()">Nästa</button>
+            <img id=imageOne src="${imgs[0]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
+            <img id=imageTwo src="${imgs[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
+            <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
+            <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
           <div class="donut-info">
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
@@ -203,6 +196,25 @@ function renderDonuts() {
         </div>
     `;
   createEventListeners();
+
+  const prevBtn = document.querySelectorAll('.prevBtn')
+  const nextBtn = document.querySelectorAll('.nextBtn')
+
+  function changePic(e) {
+    if (imageOne.classList.contains('hidden')){
+      imageOne.classList.remove('hidden');
+      imageTwo.classList.add('hidden');
+  }}
+
+  prevBtn.forEach(btn =>{
+    btn.addEventListener('click', changePic)
+  });
+  nextBtn.forEach(btn =>{
+    btn.addEventListener('click', changePic)
+
+  });
+
+
 }
 }
 
