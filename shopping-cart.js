@@ -42,10 +42,10 @@ function updateCart() {
         </div>
         <div class="cart-item-amount">
           ${donuts[i].amount} st
-          <button data-operator="minus" data-id="${i}" class="cart-minus-butn">
+          <button data-operator="minus" data-id="${i}" class="cart-minus-butn" aria-label="button for decreasing donut amount">
           -
           </button>
-          <button data-operator="plus" data-id="${i}" class="cart-plus-btn">
+          <button data-operator="plus" data-id="${i}" class="cart-plus-btn" aria-label="button for increasing donut amount">
           +
           </button>
         </div>
@@ -53,7 +53,7 @@ function updateCart() {
           ${donuts[i].sum} kr
         </div>
         <div class="remove-cart-item">
-          <button data-id="${i}" class="remove-cart-item">
+          <button data-id="${i}" class="remove-cart-item" aria-label="button for removing item from cart">
             <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
         </div>

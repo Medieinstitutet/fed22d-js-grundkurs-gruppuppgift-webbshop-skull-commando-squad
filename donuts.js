@@ -209,8 +209,8 @@ function renderDonuts() {
              Pris/st: <span class="${priceClasses}">${filteredDonutsInPriceRange[i].price}</span> kr<br />
               Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
               Summa: <span class="sum">${filteredDonutsInPriceRange[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}">-</button>
-            <button data-operator="plus" data-id="${filteredDonutsInPriceRange[i].id}">+</button>
+            <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="button for decreasing donut">-</button>
+            <button data-operator="plus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="button for increasing donut">+</button>
           </div>
         </div>
     `;
