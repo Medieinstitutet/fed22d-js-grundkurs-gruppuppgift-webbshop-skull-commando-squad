@@ -167,6 +167,16 @@ function nextClick() {
   console.log('nästa')
 }
 
+// funktion för byta bakgrundsbilden på julafton
+function christmasImg() {
+  let date1 = new Date();
+  let date2 = new Date("dec 24 2022");
+  if (date1.getDate() === date2.getDate()) {
+    document.body.style.backgroundImage =
+      "url('assets/img/christmas-gf9f1474a9_1280.png')";
+  }
+}
+christmasImg();
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
@@ -195,7 +205,6 @@ function renderDonuts() {
   createEventListeners();
 }
 }
-
 
 
 renderDonuts();
