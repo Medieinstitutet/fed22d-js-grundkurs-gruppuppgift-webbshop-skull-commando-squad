@@ -30,6 +30,13 @@
         <h2>Varukorg</h2>
         <hr />
         <div class="shopping-cart-object">Din varukorg är tom</div>
+        <button
+          class="empty-cart"
+          id="emptyCart"
+          aria-label="empty-cart-button"
+        >
+          Töm varukorgen
+        </button>
         <div class="checkout-order">
           Total summa: <span class="total-price">0 kr</span>
           <div class="rebate">Måndagsrabatt: 10 % på hela beställningen!</div>
@@ -211,25 +218,21 @@
           <label for="card">Kort</label>
           <!---- Kortdetaljer. Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
           <div class="cardDetails" id="cardDetails">
-            <label for="cardNumber"
-              >Kortnummer: <span class="req">*</span></label
-            >
+            <label for="cardNumber">Kortnummer:</label>
             <input
               type="text"
               id="cardNumber"
               name="ccInfo"
               placeholder="Kortnummer"
             />
-            <label for="cardNumber"
-              >Giltighetstid: <span class="req">*</span></label
-            >
+            <label for="cardNumber">Giltighetstid:</label>
             <input
               type="text"
               id="yearMonth"
               name="ccInfo"
               placeholder="År/månad"
             />
-            <label for="cardNumber">cvc/cvv: <span class="req">*</span></label>
+            <label for="cardNumber">cvc/cvv:</label>
             <input
               type="text"
               id="cardNumber"

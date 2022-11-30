@@ -36,13 +36,14 @@ main {
 .donutContainer {
   display: flex;
   flex-direction: column;
-  background-color: rgb(230, 210, 184);
+  background-color: rgb(191, 232, 242);
   max-width: 920px;
   margin: auto;
   align-items: center;
   margin-top: 220px;
   border: 1px solid black;
-  padding: 10px;
+  margin: 50px;
+  margin-top: 300px;
 }
 
 .donut {
@@ -103,14 +104,22 @@ a:visited {
   color: black;
 }
 
-#order-form,
-#summaryPage {
+#order-form {
   position: fixed;
   background: rgb(239, 250, 251);
   height: 100vh;
   width: 100vw;
   overflow: auto;
   top: 0;
+}
+
+#summaryPage {
+  background-color: aqua;
+
+  position: fixed;
+  height: 50vh;
+  width: 100vw;
+  overflow: auto;
 }
 
 .hidden {
@@ -206,4 +215,16 @@ input:invalid {
 .rebate-not-ok {
   background-color: red;
   border: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+.empty-cart {
+  //addding code later
+}
+
+.delivery-info {
+  text-align: center;
+  margin-top: 90px;
 }

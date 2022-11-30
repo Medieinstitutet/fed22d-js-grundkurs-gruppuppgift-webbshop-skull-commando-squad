@@ -156,16 +156,26 @@ let totalSum = 0;
 const donutContainer = document.querySelector(".donutContainer");
 
 // Deklarerar variabel för karusellknappar
-const prevBtns = document.querySelectorAll('button.prev');
-const nextBtns = document.querySelectorAll('button.next');
+const prevBtns = document.querySelectorAll("button.prev");
+const nextBtns = document.querySelectorAll("button.next");
 
+// funktion för byta bakgrundsbilden på julafton
+function christmasImg() {
+  let date1 = new Date();
+  let date2 = new Date("dec 24 2022");
+  if (date1.getDate() === date2.getDate()) {
+    document.body.style.backgroundImage =
+      "url('assets/img/christmas-gf9f1474a9_1280.png')";
+  }
+}
+christmasImg();
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   donutContainer.innerHTML = "";
 
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
-    const imgs = filteredDonutsInPriceRange[i].img
+    const imgs = filteredDonutsInPriceRange[i].img;
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
@@ -186,23 +196,21 @@ function renderDonuts() {
   createEventListeners();
 }
 
-
-prevBtns.forEach(btn =>{
-  btn.addEventListener('click', prevImage)
+prevBtns.forEach((btn) => {
+  btn.addEventListener("click", prevImage);
   console.dir(e.currentTarget.id);
 });
 
-nextBtns.forEach(btn =>{
-  btn.addEventListener('click', nextImage)
+nextBtns.forEach((btn) => {
+  btn.addEventListener("click", nextImage);
   console.dir(e.currentTarget.id);
 });
-function nextImage(e){
+function nextImage(e) {
   console.dir(e.currentTarget.id);
 }
 
-function prevImage(e){
+function prevImage(e) {
   console.dir(e.currentTarget.id);
 }
-
 
 renderDonuts();

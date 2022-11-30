@@ -46,18 +46,20 @@ function cardOr() {
 document.querySelector("#form").addEventListener("submit", submit);
 
 function submit(e) {
-  e.preventDefault();
+  e?.preventDefault();
   const summaryPage = document.getElementById("summaryPage");
   summaryPage.classList.remove("hidden");
   const deliveryTime = getDeliveryTime();
   const freightPrice = getFreightPrice();
 
-  summaryPage.innerHTML = ` <h1>Tack för din beställning</h1>
-  <ul>
-    <li>leveranstid: ${deliveryTime}</li>
-    <li>summa: ${totalSum.toFixed(2)} kr</li>
-    <li>fraktkostnad: ${freightPrice}</li>
-  </ul>`;
+  summaryPage.innerHTML = ` 
+    <div class="delivery-info">
+    <h2>Tack för din beställning!</h2>
+    <p>Din order levereras inom: ${deliveryTime}
+    <p>Fraktkostnad: ${freightPrice.toFixed(2)} kr</p>
+    <p>Summa: ${(totalSum + freightPrice).toFixed(2)} kr</p>
+    </div>
+  `;
 }
 
 function getDeliveryTime() {
@@ -83,8 +85,8 @@ function getFreightPrice() {
     amount = amount + donut.amount;
   }
   if (amount > 15) {
-    return "Fri frakt";
+    return 0;
   }
   const freightPrice = 25 + totalSum * 0.1;
-  return `${freightPrice.toFixed(2)} kr`;
+  return freightPrice;
 }
