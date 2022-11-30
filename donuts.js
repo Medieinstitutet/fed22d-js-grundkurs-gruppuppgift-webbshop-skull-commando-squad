@@ -171,17 +171,17 @@ christmasImg();
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
+
+  
   donutContainer.innerHTML = "";
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i].img
-    const imageOne = document.querySelector('#imageOne')
-const imageTwo = document.querySelector('#imageTwo')
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img id=imageOne src="${imgs[0]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
-            <img id=imageTwo src="${imgs[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
+            <img id=imageOne-${i}" src="${imgs[0]}" width="200" height="200" loading="lazy" class="hidden" alt="${filteredDonutsInPriceRange[i].alt}"/>
+            <img id=imageTwo-${i}" src="${imgs[1]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
             <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
             <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
@@ -201,22 +201,26 @@ const imageTwo = document.querySelector('#imageTwo')
   const nextBtn = document.querySelectorAll('.nextBtn')
 
   function changePic(e) {
+    const i = e.currentTarget.id.replace('prevBtn-', '').replace('nextBtn-', '');
+    const imageOne = document.querySelector(`#imageOne-${i}`);
+    const imageTwo = document.querySelector(`#imageTwo-${i}`);
+    console.log(imageOne)
+
     if (imageOne.classList.contains('hidden')){
       imageOne.classList.remove('hidden');
       imageTwo.classList.add('hidden');
+      console.log('hej')
+  }else {
+    imageOne.classList.add('hidden');
+    imageTwo.classList.remove('hidden');
   }}
-
   prevBtn.forEach(btn =>{
     btn.addEventListener('click', changePic)
   });
   nextBtn.forEach(btn =>{
     btn.addEventListener('click', changePic)
-
   });
-
-
-}
-}
+}};
 
 
 renderDonuts();
