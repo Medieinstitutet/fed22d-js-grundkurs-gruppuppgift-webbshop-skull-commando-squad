@@ -31,11 +31,12 @@ function updateCart() {
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
+      const imgs = donuts[i].img
       shoppingCartMenu.innerHTML += `
      
       <div class="cart-info">
         <div class="cart-img">
-          <img src="${donuts[i].img}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+          <img src="${imgs[i]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
         </div>
         <div class="cart-item-name">
           ${donuts[i].name}
