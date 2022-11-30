@@ -143,60 +143,78 @@
       <div class="formsWrapper">
         <h2 class="form-headline">Fyll i dina personuppgifter</h2>
         <form id="form">
-          <label for="fname">Förnamn: <span class="req">*</span></label>
-          <input type="text" required id="nameField" placeholder="Förnamn" />
-          <label for="lname">Efternamn: <span class="req">*</span></label>
-          <input
-            type="text"
-            required
-            id="lname"
-            name="lname"
-            placeholder="Efternamn"
-          />
-          <label for="adress">Adress: <span class="req">*</span></label>
-          <input
-            type="text"
-            required
-            id="adress"
-            name="adresse"
-            placeholder="Adress"
-          />
-          <label for="postnummer">Postnummer: <span class="req">*</span></label>
-          <input
-            type="text"
-            required
-            id="postnummer"
-            name="zipcode"
-            placeholder="Postnummer"
-          />
-          <label for="stad">Stad: <span class="req">*</span></label>
-          <input
-            type="text"
-            required
-            id="stad"
-            name="city"
-            placeholder="Stad"
-          />
-          <label for="phone">Telefonnummer: <span class="req">*</span></label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="07XXXXXXXX"
-            required
-            minlength="10"
-            maxlength="12"
-          />
-          <label for="email">E-post: <span class="req">*</span></label>
-          <input type="email" required id="email" placeholder="E-post" /><br />
+          <label for="fname"
+            >Förnamn: <span class="req">*</span>
+            <input type="text" required id="fname" placeholder="Förnamn"
+          /></label>
 
-          <label for="rebateCode">Fyll i din rabattkod:</label>
-          <input
-            type="text"
-            id="rebate-code"
-            name="rebate-code"
-            placeholder="Rabattkod"
-          />
+          <label for="lname"
+            >Efternamn: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="lname"
+              name="lname"
+              placeholder="Efternamn"
+          /></label>
+
+          <label for="adress"
+            >Adress: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="adress"
+              name="adresse"
+              placeholder="Adress"
+          /></label>
+
+          <label for="postnummer"
+            >Postnummer: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="postnummer"
+              name="zipcode"
+              placeholder="Postnummer"
+          /></label>
+
+          <label for="stad"
+            >Stad: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="stad"
+              name="city"
+              placeholder="Stad"
+          /></label>
+
+          <label for="phone"
+            >Telefonnummer: <span class="req">*</span>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="07XXXXXXXX"
+              required
+              minlength="10"
+              maxlength="12"
+          /></label>
+
+          <label for="email"
+            >E-post: <span class="req">*</span>
+            <input type="email" required id="email" placeholder="E-post" /><br
+          /></label>
+
+          <label for="rebateCode"
+            >Fyll i din rabattkod:
+            <input
+              type="text"
+              id="rebateCode"
+              name="rebateCode"
+              placeholder="Rabattkod"
+            />
+          </label>
+
           <button type="button" id="rebate-btn">Lägg till rabattkod</button>
 
           <h3>Välj betalsätt</h3>
@@ -208,53 +226,59 @@
             class="cardButton"
           />
 
-          <label for="card">Kort</label>
-          <!----Kortdetaljer Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
+          <label for="cardRadio">Kort</label>
+          <!--Kortdetaljer Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
           <div class="cardDetails" id="cardDetails">
-            <label for="cardNumber">Kortnummer:</label>
-            <input
-              type="text"
-              id="cardNumber"
-              name="ccInfo"
-              placeholder="Kortnummer"
-            />
-            <label for="cardNumber">Giltighetstid:</label>
-            <input
-              type="text"
-              id="yearMonth"
-              name="ccInfo"
-              placeholder="År/månad"
-            />
-            <label for="cardNumber">cvc/cvv:</label>
-            <input
-              type="text"
-              id="cardNumber"
-              name="ccInfo"
-              placeholder="Kortnummer"
-              min="3"
-            />
+            <label for="cardNumber"
+              >Kortnummer:
+              <input
+                type="text"
+                id="cardNumber"
+                name="ccInfo"
+                placeholder="Kortnummer"
+              />
+            </label>
+
+            <label for="yearMonth"
+              >Giltighetstid:
+              <input
+                type="text"
+                id="yearMonth"
+                name="ccInfo"
+                placeholder="År/månad"
+              />
+            </label>
+
+            <label for="cvc"
+              >cvc/cvv:
+              <input
+                type="text"
+                id="cvc"
+                name="ccInfo"
+                placeholder="Kortnummer"
+              />
+            </label>
           </div>
           <br />
-          <!---Fortsättning på formuläret som är synligt-->
+          <!--Fortsättning på formuläret som är synligt-->
           <input
             type="radio"
             id="invoiceRadio"
             name="payMethod"
             value="Faktura"
           />
-          <label for="invoice">Faktura</label><br />
+          <label for="invoiceRadio">Faktura</label><br />
           <div class="invoiceDetails" id="invoiceDetails">
-            <label for="phone"
-              >Fyll i ditt personnummer: <span class="req">*</span></label
-            >
-            <input
-              type="text"
-              id="persnr"
-              name="persnr"
-              placeholder="XXXXXX-XXXX"
-              minlength="11"
-              maxlength="13"
-            />
+            <label for="persnr"
+              >Fyll i ditt personnummer: <span class="req">*</span>
+              <input
+                type="text"
+                id="persnr"
+                name="persnr"
+                placeholder="XXXXXX-XXXX"
+                minlength="11"
+                maxlength="13"
+            /></label>
           </div>
           <label for="reklam">Vill du prenumerera på vårt nyhetsbrev?</label>
           <input type="checkbox" id="reklam" name="newsLetter" checked /><br />
