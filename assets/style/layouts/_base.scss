@@ -103,14 +103,22 @@ a:visited {
   color: black;
 }
 
-#order-form,
-#summaryPage {
+#order-form {
   position: fixed;
   background: rgb(239, 250, 251);
   height: 100vh;
   width: 100vw;
   overflow: auto;
   top: 0;
+}
+
+#summaryPage {
+  background-color: rgb(129, 222, 216);
+  border: 5px solid black;
+  position: fixed;
+  height: 50vh;
+  width: 100vw;
+  overflow: auto;
 }
 
 .hidden {
