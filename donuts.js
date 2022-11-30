@@ -225,7 +225,7 @@ function renderDonuts() {
     const imageOne = document.querySelector(`#image-One-${i}`);
     const imageTwo = document.querySelector(`#image-Two-${i}`);
     
-    if (imageOne.classList.contains('hidden')){
+    if (imageOne.classList.contains('hidden')){ 
       imageOne.classList.remove('hidden');
       imageTwo.classList.add('hidden');
   }else {
