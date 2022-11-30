@@ -197,22 +197,22 @@ function renderDonuts() {
     `;
   createEventListeners();
 
-  const prevBtn = document.querySelectorAll('.prevBtn')
-  const nextBtn = document.querySelectorAll('.nextBtn')
+  const prevBtn = document.querySelectorAll('.prevBtn');
+  const nextBtn = document.querySelectorAll('.nextBtn');
+  const imageOne = document.querySelector(`#imageOne-${i}`);
+  const imageTwo = document.querySelector(`#imageTwo-${i}`);
 
   function changePic(e) {
     const i = e.currentTarget.id.replace('prevBtn-', '').replace('nextBtn-', '');
-    const imageOne = document.querySelector(`#imageOne-${i}`);
-    const imageTwo = document.querySelector(`#imageTwo-${i}`);
     console.log(imageOne)
-
-    if (imageOne.classList.contains('hidden')){
-      imageOne.classList.remove('hidden');
-      imageTwo.classList.add('hidden');
+    if (imageOne.classList.contains('.hidden')){
+      imageOne.classList.remove('.hidden');
+      imageTwo.classList.add('.hidden');
       console.log('hej')
   }else {
-    imageOne.classList.add('hidden');
-    imageTwo.classList.remove('hidden');
+    imageOne.classList.add('.hidden');
+    imageTwo.classList.remove('.hidden');
+    console.log('då')
   }}
   prevBtn.forEach(btn =>{
     btn.addEventListener('click', changePic)
