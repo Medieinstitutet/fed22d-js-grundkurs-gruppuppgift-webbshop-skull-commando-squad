@@ -7,7 +7,7 @@ const donuts = [
     rating: 3,
     amount: 0,
     sum: 0,
-    img: "assets/img/Chocolate-1.png",
+    img: ["assets/img/chocolate-3.png", "assets/img/Chocolate-1.png"],
     alt: "donut with chocolate glaze",
     description: "Smak av choklad",
     category: ["tasty", "all"],
@@ -19,7 +19,7 @@ const donuts = [
     rating: 1,
     amount: 0,
     sum: 0,
-    img: "assets/img/vanilla-ice.png",
+    img: ["assets/img/vanilla-ice.png", "assets/img/vanilla-2.png"],
     alt: "donut with vanilla glaze",
     description: "Smak av vanilj",
     category: ["tasty", "all"],
@@ -31,7 +31,7 @@ const donuts = [
     rating: 5,
     amount: 0,
     sum: 0,
-    img: "assets/img/strawberry.png",
+    img: ["assets/img/strawberry.png", "assets/img/strawberry-2.png"],
     alt: "donut with strawberry glaze",
     description: "Smak av jordgubb",
     category: ["tasty", "all"],
@@ -43,7 +43,7 @@ const donuts = [
     rating: 4,
     amount: 0,
     sum: 0,
-    img: "assets/img/salted-caramell.png",
+    img: ["assets/img/salted-caramell.png", "assets/img/salted-caramel-2.png"],
     alt: "donut made of fudge",
     description: "Smak av kola",
     category: ["tasty", "all"],
@@ -55,7 +55,7 @@ const donuts = [
     rating: 5,
     amount: 0,
     sum: 0,
-    img: "assets/img/bacon.PNG",
+    img: ["assets/img/bacon.PNG", "assets/img/bacon-donut-2.jpg"],
     alt: "donut with bacon crust and glaze",
     description: "Smak av bacon",
     category: ["meat", "all"],
@@ -67,7 +67,8 @@ const donuts = [
     rating: 1,
     amount: 0,
     sum: 0,
-    img: "assets/img/rib-eye.PNG",
+    img: ["assets/img/rib-eye.PNG", "assets/img/rib-eye.jpeg"],
+
     alt: "donut with meat filling",
     description: "Smak av entrecote",
     category: ["meat", "all"],
@@ -79,7 +80,7 @@ const donuts = [
     rating: 3,
     amount: 0,
     sum: 0,
-    img: "assets/img/chicken.PNG",
+    img: ["assets/img/chicken.PNG", "assets/img/chicken-2.webp"],
     alt: "donut made of chicken with crust",
     description: "Smak av krispig kyckling",
     category: ["meat", "all"],
@@ -91,7 +92,7 @@ const donuts = [
     rating: 4,
     amount: 0,
     sum: 0,
-    img: "assets/img/pulled-beef.PNG",
+    img: ["assets/img/pulled-beef.PNG", "assets/img/pulled-beef-2.jpg"],
     alt: "donut with pulled beef topping",
     description: "Trådig och rökig",
     category: ["meat", "all"],
@@ -103,7 +104,7 @@ const donuts = [
     rating: 1,
     amount: 0,
     sum: 0,
-    img: "assets/img/water-cress.png",
+    img: ["assets/img/water-cress.png", "assets/img/water-cress-2.jpg"],
     alt: "green donut made of cress",
     description: "Pepprig och fräsch",
     category: ["plant", "all"],
@@ -115,7 +116,7 @@ const donuts = [
     rating: 2,
     amount: 0,
     sum: 0,
-    img: "assets/img/dandelion.png",
+    img: ["assets/img/dandelion.png", "assets/img/dandelion-2.jpg"],
     alt: "yellow donut made of flowers",
     description: "Smak av maskros",
     category: ["plant", "all"],
@@ -127,7 +128,7 @@ const donuts = [
     rating: 5,
     amount: 0,
     sum: 0,
-    img: "assets/img/corn-hole.PNG",
+    img: ["assets/img/corn-hole.PNG", "assets/img/corn-hole-2.jpg"],
     alt: "a plastic ring with a corn in it",
     description: "Smak av majs och plast",
     category: ["plant", "all"],
@@ -139,7 +140,7 @@ const donuts = [
     rating: 1,
     amount: 0,
     sum: 0,
-    img: "assets/img/sea-weed.png",
+    img: ["assets/img/sea-weed.png", "assets/img/sea-weed-2.jpg"],
     alt: "donut made of sea weed",
     description: "Stora inlag av umami",
     category: ["plant", "all"],
@@ -154,16 +155,22 @@ let totalSum = 0;
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 
+// Deklarerar variabel för karusellknappar
+const prevBtns = document.querySelectorAll('button.prev');
+const nextBtns = document.querySelectorAll('button.next');
+
+
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   donutContainer.innerHTML = "";
 
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
+    const imgs = filteredDonutsInPriceRange[i].img
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img src="${filteredDonutsInPriceRange[i].img}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
+            <img src="${imgs[1]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
           </div>
           <div class="donut-info">
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
@@ -178,5 +185,24 @@ function renderDonuts() {
   }
   createEventListeners();
 }
+
+
+prevBtns.forEach(btn =>{
+  btn.addEventListener('click', prevImage)
+  console.dir(e.currentTarget.id);
+});
+
+nextBtns.forEach(btn =>{
+  btn.addEventListener('click', nextImage)
+  console.dir(e.currentTarget.id);
+});
+function nextImage(e){
+  console.dir(e.currentTarget.id);
+}
+
+function prevImage(e){
+  console.dir(e.currentTarget.id);
+}
+
 
 renderDonuts();
