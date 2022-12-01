@@ -190,12 +190,16 @@ function isChristmas() {
   return date1.getDate() === date2.getDate();
 }
 
+let rated = donuts.rating;
+console.log([donuts.rating]);
+
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
   const priceClasses = isChristmas() ? "sum red-price" : "sum";
   donutContainer.innerHTML = "";
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i];
+    let rating = '<span class="material-symbols-outlined">star_rate</span>'.repeat(donuts[i].rating)
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
@@ -206,6 +210,7 @@ function renderDonuts() {
             <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
           <div class="donut-info">
+            <p>Betyg: ${rating}</p>
              <span>${filteredDonutsInPriceRange[i].description}</span><br/>
              Pris/st: <span class="${priceClasses}">${filteredDonutsInPriceRange[i].price}</span> kr<br />
               Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
