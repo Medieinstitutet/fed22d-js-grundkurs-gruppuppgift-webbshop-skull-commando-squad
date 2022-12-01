@@ -155,8 +155,6 @@ let totalSum = 0;
 // Deklarerar en variabel för munk container
 const donutContainer = document.querySelector(".donutContainer");
 
-
-
 // funktion för byta bakgrundsbilden på julafton
 function christmasImg() {
   if (isChristmas()) {
@@ -199,7 +197,10 @@ function renderDonuts() {
   donutContainer.innerHTML = "";
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
     const imgs = filteredDonutsInPriceRange[i];
-    let rating = '<span class="material-symbols-outlined">star_rate</span>'.repeat(donuts[i].rating)
+    let rating =
+      '<span class="material-symbols-outlined">star_rate</span>'.repeat(
+        filteredDonutsInPriceRange[i].rating
+      );
     donutContainer.innerHTML += `
         <h2>${filteredDonutsInPriceRange[i].name}</h2>
         <div class="donut">
@@ -220,33 +221,35 @@ function renderDonuts() {
           </div>
         </div>
     `;
-  createEventListeners();
-//Deklarerar knaparna till slidern
-const prevBtn = document.querySelectorAll('.prevBtn');
-const nextBtn = document.querySelectorAll('.nextBtn');
+    createEventListeners();
+    //Deklarerar knaparna till slidern
+    const prevBtn = document.querySelectorAll(".prevBtn");
+    const nextBtn = document.querySelectorAll(".nextBtn");
 
-//Funktion för att byta bild i karusellen
-function changePic(e) {
-  const i = e.currentTarget.id.replace('prevBtn-', '').replace('nextBtn-', '');
-  const imageOne = document.querySelector(`#imageOne-${i}`);
-  const imageTwo = document.querySelector(`#imageTwo-${i}`);
-//if-sats för att kontrollera bild och byta klasser
-if (imageOne.classList.contains('hidden')){ 
-  imageOne.classList.remove('hidden');
-  imageTwo.classList.add('hidden');
-}else {
-  imageOne.classList.add('hidden');
-  imageTwo.classList.remove('hidden');
-}}
-//Knappfunktioner
-prevBtn.forEach(btn =>{
-  btn.addEventListener('click', changePic)
-});
-nextBtn.forEach(btn =>{
-  btn.addEventListener('click', changePic)
-});
-
-}};
-
+    //Funktion för att byta bild i karusellen
+    function changePic(e) {
+      const i = e.currentTarget.id
+        .replace("prevBtn-", "")
+        .replace("nextBtn-", "");
+      const imageOne = document.querySelector(`#imageOne-${i}`);
+      const imageTwo = document.querySelector(`#imageTwo-${i}`);
+      //if-sats för att kontrollera bild och byta klasser
+      if (imageOne.classList.contains("hidden")) {
+        imageOne.classList.remove("hidden");
+        imageTwo.classList.add("hidden");
+      } else {
+        imageOne.classList.add("hidden");
+        imageTwo.classList.remove("hidden");
+      }
+    }
+    //Knappfunktioner
+    prevBtn.forEach((btn) => {
+      btn.addEventListener("click", changePic);
+    });
+    nextBtn.forEach((btn) => {
+      btn.addEventListener("click", changePic);
+    });
+  }
+}
 
 renderDonuts();

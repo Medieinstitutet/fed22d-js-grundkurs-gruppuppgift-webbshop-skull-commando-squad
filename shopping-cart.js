@@ -36,7 +36,7 @@ function updateCart() {
      
       <div class="cart-info">
         <div class="cart-img">
-          <img src="${imgs[i]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+          <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
         </div>
         <div class="cart-item-name">
           ${donuts[i].name}
