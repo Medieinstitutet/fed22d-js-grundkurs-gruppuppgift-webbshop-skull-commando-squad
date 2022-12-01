@@ -145,6 +145,18 @@ const donuts = [
     description: "Stora inlag av umami",
     category: ["plant", "all"],
   },
+  {
+    name: "Gratis luciamunk",
+    id: 12,
+    price: getDonutPrice(0),
+    rating: 5,
+    amount: isLucia() ? 1 : 0,
+    sum: 0,
+    img: ["assets/img/luciamunk.png"],
+    alt: "free donut for lucia",
+    description: "Den godaste luciamunken",
+    category: ["plant", "all"],
+  },
 ];
 // Deklarerar variabel för temp array för donuts
 let filteredDonuts = [...donuts];
@@ -188,6 +200,13 @@ function isChristmas() {
   return date1.getDate() === date2.getDate();
 }
 
+//kollar om det är lucia
+function isLucia() {
+  let dateNow = new Date();
+  let lucia = new Date("dec 13 2022");
+  return dateNow.getDate() === lucia.getDate();
+}
+
 let rated = donuts.rating;
 console.log([donuts.rating]);
 
@@ -196,28 +215,31 @@ function renderDonuts() {
   const priceClasses = isChristmas() ? "sum red-price" : "sum";
   donutContainer.innerHTML = "";
   for (let i = 0; i < filteredDonutsInPriceRange.length; i++) {
-    const imgs = filteredDonutsInPriceRange[i];
+    const donut = filteredDonutsInPriceRange[i];
+    if (donut.name === "Gratis luciamunk") {
+      continue;
+    }
     let rating =
       '<span class="material-symbols-outlined">star_rate</span>'.repeat(
-        filteredDonutsInPriceRange[i].rating
+        donut.rating
       );
     donutContainer.innerHTML += `
-        <h2>${filteredDonutsInPriceRange[i].name}</h2>
+        <h2>${donut.name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img id="imageOne-${i}" src="${imgs.img[0]}" width="200" height="200" loading="lazy" alt="${filteredDonutsInPriceRange[i].alt}"/>
-            <img id="imageTwo-${i}" src="${imgs.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${filteredDonutsInPriceRange[i].alt}"/><br>
+            <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt}"/>
+            <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt}"/><br>
             <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
             <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
           <div class="donut-info">
             <p>Betyg: ${rating}</p>
-             <span>${filteredDonutsInPriceRange[i].description}</span><br/>
-             Pris/st: <span class="${priceClasses}">${filteredDonutsInPriceRange[i].price}</span> kr<br />
-              Antal i varukorgen: <span class="amount">${filteredDonutsInPriceRange[i].amount}</span> st<br/>
-              Summa: <span class="sum">${filteredDonutsInPriceRange[i].sum}</span> kr<br />
-            <button data-operator="minus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="button for decreasing donut">-</button>
-            <button data-operator="plus" data-id="${filteredDonutsInPriceRange[i].id}" aria-label="button for increasing donut">+</button>
+             <span>${donut.description}</span><br/>
+             Pris/st: <span class="${priceClasses}">${donut.price}</span> kr<br />
+              Antal i varukorgen: <span class="amount">${donut.amount}</span> st<br/>
+              Summa: <span class="sum">${donut.sum}</span> kr<br />
+            <button data-operator="minus" data-id="${donut.id}" aria-label="button for decreasing donut">-</button>
+            <button data-operator="plus" data-id="${donut.id}" aria-label="button for increasing donut">+</button>
           </div>
         </div>
     `;

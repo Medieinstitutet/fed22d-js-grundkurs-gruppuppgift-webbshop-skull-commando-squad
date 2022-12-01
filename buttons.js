@@ -26,8 +26,6 @@ function increaseCount(e) {
 
   renderDonuts();
   updateCart();
-
-  printItemsInCart();
 }
 
 // funktion för att minska antal munkar med minusknappen och uppdatera totalsumman
@@ -40,8 +38,6 @@ function decreaseCount(e) {
     donuts[id].sum = donuts[id].amount * donuts[id].price;
     renderDonuts();
     updateCart();
-
-    printItemsInCart();
   }
 }
 
@@ -52,6 +48,4 @@ function removeCartItem(e) {
   donuts[id].sum = 0;
   renderDonuts();
   updateCart();
-
-  printItemsInCart();
 }

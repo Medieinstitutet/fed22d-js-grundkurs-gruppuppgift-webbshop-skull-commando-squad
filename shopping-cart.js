@@ -7,9 +7,10 @@ function printItemsInCart() {
   }
   itemsInCart.innerHTML = amount;
 }
-
+updateCart();
 // funktion för att varukorgen ska uppdateras med aktuell info
 function updateCart() {
+  printItemsInCart();
   const totalPrice = document.querySelector(".total-price");
   let sum = 0;
   for (let i = 0; i < donuts.length; i++) {
@@ -31,35 +32,54 @@ function updateCart() {
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
-      const imgs = donuts[i].img;
-      shoppingCartMenu.innerHTML += `
-     
-      <div class="cart-info">
-        <div class="cart-img">
-          <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+      if (donuts[i].name === "Gratis luciamunk") {
+        shoppingCartMenu.innerHTML += `
+        <div class="cart-info">
+          <div class="cart-img">
+            <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+          </div>
+          <div class="cart-item-name">
+            ${donuts[i].name}
+          </div>
+          <div class="cart-item-amount">
+            ${donuts[i].amount} st
+          </div>
+          <div class="cart-item-sum"> 
+            ${donuts[i].sum} kr
+          </div>
+          <div class="remove-cart-item">
+          </div>
         </div>
-        <div class="cart-item-name">
-          ${donuts[i].name}
+  `;
+      } else {
+        shoppingCartMenu.innerHTML += `
+        <div class="cart-info">
+          <div class="cart-img">
+            <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+          </div>
+          <div class="cart-item-name">
+            ${donuts[i].name}
+          </div>
+          <div class="cart-item-amount">
+            ${donuts[i].amount} st
+            <button data-operator="minus" data-id="${i}" class="cart-minus-butn">
+            -
+            </button>
+            <button data-operator="plus" data-id="${i}" class="cart-plus-btn">
+            +
+            </button>
+          </div>
+          <div class="cart-item-sum"> 
+            ${donuts[i].sum} kr
+          </div>
+          <div class="remove-cart-item">
+            <button data-id="${i}" class="remove-cart-item">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
-        <div class="cart-item-amount">
-          ${donuts[i].amount} st
-          <button data-operator="minus" data-id="${i}" class="cart-minus-butn">
-          -
-          </button>
-          <button data-operator="plus" data-id="${i}" class="cart-plus-btn">
-          +
-          </button>
-        </div>
-        <div class="cart-item-sum"> 
-          ${donuts[i].sum} kr
-        </div>
-        <div class="remove-cart-item">
-          <button data-id="${i}" class="remove-cart-item">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
-`;
+  `;
+      }
     }
   }
   createEventListeners();
