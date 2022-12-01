@@ -31,7 +31,7 @@ function updateCart() {
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
-      const imgs = donuts[i].img
+      const imgs = donuts[i].img;
       shoppingCartMenu.innerHTML += `
      
       <div class="cart-info">
