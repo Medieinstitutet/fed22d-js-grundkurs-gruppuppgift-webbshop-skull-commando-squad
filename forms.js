@@ -51,15 +51,25 @@ function submit(e) {
   summaryPage.classList.remove("hidden");
   const deliveryTime = getDeliveryTime();
   const freightPrice = getFreightPrice();
+  const rebates = getRebates();
 
-  summaryPage.innerHTML = ` 
+  document.querySelector("#summary-dynamic-content").innerHTML = ` 
     <div class="delivery-info">
       <h2>Tack för din beställning!</h2>
       <p>Din order levereras inom: ${deliveryTime}
       <p>Fraktkostnad: ${freightPrice.toFixed(2)} kr</p>
-      <p>Summa: ${(totalSum + freightPrice).toFixed(2)} kr</p>
+      <p>Summa: ${(totalSum + freightPrice + rebates).toFixed(2)} kr</p>
     </div>
   `;
+}
+function getRebates() {
+  const now = new Date();
+  const week = getWeekNumber(now)[1]; // [Year, week]
+  const day = now.getDay();
+  if (week % 2 === 0 && day === 2) {
+    return -25;
+  }
+  return 0;
 }
 
 function getDeliveryTime() {
