@@ -9,8 +9,8 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/chocolate-3.png", "assets/img/Chocolate-1.png"],
-    alt: ["donut with chocolate glaze", "TestTest"],
-    description: ["Smak av choklad", "Smak av choklad"],
+    alt: ["donut with chocolate glaze", "donut with chocolate glaze"],
+    description: "Smak av choklad",
     category: ["tasty", "all"],
   },
   {
@@ -22,8 +22,8 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/vanilla-ice.png", "assets/img/vanilla-2.png"],
-    alt: "donut with vanilla glaze",
-    description: ["Smak av vanilj", "Smak av vanilj"],
+    alt: ["donut with vanilla glaze","donut with vanilla glaze"],
+    description: "Smak av vanilj",
     category: ["tasty", "all"],
   },
   {
@@ -165,8 +165,8 @@ const donuts = [
     amount: isLucia() ? 1 : 0,
     sum: 0,
     img: ["assets/img/luciamunk.png"],
-    alt: "free donut for lucia",
-    description: ["Den godaste luciamunken","Den godaste luciamunken"],
+    alt: ["free donut for lucia", "free donut for lucia"],
+    description: "Den godaste luciamunken",
     category: ["plant", "all"],
   },
 ];
