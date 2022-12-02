@@ -22,7 +22,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/vanilla-ice.png", "assets/img/vanilla-2.png"],
-    alt: ["donut with vanilla glaze","donut with vanilla glaze"],
+    alt: ["donut with vanilla glaze", "donut with vanilla glaze"],
     description: "Smak av vanilj",
     category: ["tasty", "all"],
   },
@@ -61,7 +61,10 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/bacon.PNG", "assets/img/bacon-donut-2.jpg"],
-    alt: ["donut with bacon crust and glaze", "donut with bacon crust and glaze"],
+    alt: [
+      "donut with bacon crust and glaze",
+      "donut with bacon crust and glaze",
+    ],
     description: "Smak av bacon",
     category: ["meat", "all"],
   },
@@ -139,7 +142,10 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/corn-hole.PNG", "assets/img/corn-hole-2.jpg"],
-    alt: ["a plastic ring with a corn in it", "a plastic ring with a corn in it"],
+    alt: [
+      "a plastic ring with a corn in it",
+      "a plastic ring with a corn in it",
+    ],
     description: "Smak av majs och plast",
     category: ["plant", "all"],
   },
@@ -239,8 +245,14 @@ function renderDonuts() {
         <h2>${donut.name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt[0]}"/>
-            <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt[1]}"/><br>
+            <img id="imageOne-${i}" src="${
+      donut.img[0]
+    }" width="200" height="200" loading="lazy" alt="${donut.alt[0]}"/>
+            <img id="imageTwo-${i}" src="${
+      donut.img[1]
+    }" width="200" height="200" loading="lazy" class="hidden" alt="${
+      donut.alt[1]
+    }"/><br>
             <div class="donutButtons">
             <button class="prevBtn material-symbols-outlined" id="prevBtn-${i}">arrow_back_ios</button>
             <button class="nextBtn material-symbols-outlined" id="nextBtn-${i}">arrow_forward_ios</button>
@@ -249,11 +261,19 @@ function renderDonuts() {
           <div class="donut-info">
             <p>Betyg: ${rating}</p>
              <span>${donut.description}</span><br/>
-             Pris/st: <span class="${priceClasses}">${Math.round(donut.price)}</span> kr<br />
-              Antal i varukorgen: <span class="amount">${donut.amount}</span> st<br/>
+             Pris/st: <span class="${priceClasses}">${Math.round(
+      donut.price
+    )}</span> kr<br />
+              Antal i varukorgen: <span class="amount">${
+                donut.amount
+              }</span> st<br/>
               Summa: <span class="sum">${Math.round(donut.sum)}</span> kr<br />
-            <button data-operator="minus" data-id="${donut.id}" aria-label="button for decreasing donut">-</button>
-            <button data-operator="plus" data-id="${donut.id}" aria-label="button for increasing donut">+</button>
+            <button data-operator="minus" data-id="${
+              donut.id
+            }" aria-label="button for decreasing donut">-</button>
+            <button data-operator="plus" data-id="${
+              donut.id
+            }" aria-label="button for increasing donut">+</button>
           </div>
         </div>
     `;
