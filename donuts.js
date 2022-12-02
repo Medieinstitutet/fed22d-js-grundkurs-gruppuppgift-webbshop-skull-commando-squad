@@ -9,8 +9,8 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/chocolate-3.png", "assets/img/Chocolate-1.png"],
-    alt: "donut with chocolate glaze",
-    description: "Smak av choklad",
+    alt: ["donut with chocolate glaze", "TestTest"],
+    description: ["Smak av choklad", "Smak av choklad"],
     category: ["tasty", "all"],
   },
   {
@@ -23,7 +23,7 @@ const donuts = [
     sum: 0,
     img: ["assets/img/vanilla-ice.png", "assets/img/vanilla-2.png"],
     alt: "donut with vanilla glaze",
-    description: "Smak av vanilj",
+    description: ["Smak av vanilj", "Smak av vanilj"],
     category: ["tasty", "all"],
   },
   {
@@ -35,7 +35,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/strawberry.png", "assets/img/strawberry-2.png"],
-    alt: "donut with strawberry glaze",
+    alt: ["donut with strawberry glaze", "donut with strawberry glaze"],
     description: "Smak av jordgubb",
     category: ["tasty", "all"],
   },
@@ -48,7 +48,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/salted-caramell.png", "assets/img/salted-caramel-2.png"],
-    alt: "donut made of fudge",
+    alt: ["donut made of fudge", "donut made of fudge"],
     description: "Smak av kola",
     category: ["tasty", "all"],
   },
@@ -61,7 +61,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/bacon.PNG", "assets/img/bacon-donut-2.jpg"],
-    alt: "donut with bacon crust and glaze",
+    alt: ["donut with bacon crust and glaze", "donut with bacon crust and glaze"],
     description: "Smak av bacon",
     category: ["meat", "all"],
   },
@@ -74,8 +74,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/rib-eye.PNG", "assets/img/rib-eye.jpeg"],
-
-    alt: "donut with meat filling",
+    alt: ["donut with meat filling", "donut with meat filling"],
     description: "Smak av entrecote",
     category: ["meat", "all"],
   },
@@ -88,7 +87,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/chicken.PNG", "assets/img/chicken-2.webp"],
-    alt: "donut made of chicken with crust",
+    alt: ["donut made of chicken with crust", "Sweet cock"],
     description: "Smak av krispig kyckling",
     category: ["meat", "all"],
   },
@@ -101,7 +100,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/pulled-beef.PNG", "assets/img/pulled-beef-2.jpg"],
-    alt: "donut with pulled beef topping",
+    alt: ["donut with pulled beef topping", "donut with pulled beef topping"],
     description: "Trådig och rökig",
     category: ["meat", "all"],
   },
@@ -114,7 +113,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/water-cress.png", "assets/img/water-cress-2.jpg"],
-    alt: "green donut made of cress",
+    alt: ["green donut made of cress", "green donut made of cress"],
     description: "Pepprig och fräsch",
     category: ["plant", "all"],
   },
@@ -127,7 +126,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/dandelion.png", "assets/img/dandelion-2.jpg"],
-    alt: "yellow donut made of flowers",
+    alt: ["yellow donut made of flowers", "yellow donut made of flowers"],
     description: "Smak av maskros",
     category: ["plant", "all"],
   },
@@ -140,7 +139,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/corn-hole.PNG", "assets/img/corn-hole-2.jpg"],
-    alt: "a plastic ring with a corn in it",
+    alt: ["a plastic ring with a corn in it", "a plastic ring with a corn in it"],
     description: "Smak av majs och plast",
     category: ["plant", "all"],
   },
@@ -153,7 +152,7 @@ const donuts = [
     amount: 0,
     sum: 0,
     img: ["assets/img/sea-weed.png", "assets/img/sea-weed-2.jpg"],
-    alt: "donut made of sea weed",
+    alt: ["donut made of sea weed", "donut made of sea weed"],
     description: "Stora inlag av umami",
     category: ["plant", "all"],
   },
@@ -167,7 +166,7 @@ const donuts = [
     sum: 0,
     img: ["assets/img/luciamunk.png"],
     alt: "free donut for lucia",
-    description: "Den godaste luciamunken",
+    description: ["Den godaste luciamunken","Den godaste luciamunken"],
     category: ["plant", "all"],
   },
 ];
@@ -240,8 +239,8 @@ function renderDonuts() {
         <h2>${donut.name}</h2>
         <div class="donut">
           <div class="donut-img">
-            <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt}"/>
-            <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt}"/><br>
+            <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt[0]}"/>
+            <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt[1]}"/><br>
             <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
             <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
