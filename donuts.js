@@ -220,6 +220,7 @@ function isLucia() {
 }
 
 let rated = donuts.rating;
+console.log([donuts.rating]);
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
@@ -238,12 +239,10 @@ function renderDonuts() {
         <h2>${donut.name}</h2>
         <div class="donut">
           <div class="donut-img">
-            	<div class="donutButtons">
-                <button class="prevBtn material-symbols-outlined" id="prevBtn-${i}" aria-label="Previous image button">arrow_back_ios</button>
-                <button class="nextBtn material-symbols-outlined" id="nextBtn-${i}" aria-label="Next image button">arrow_forward_ios</button>
-              </div>
             <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt[0]}"/>
             <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt[1]}"/><br>
+            <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
+            <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
           </div>
           <div class="donut-info">
             <p>Betyg: ${rating}</p>
