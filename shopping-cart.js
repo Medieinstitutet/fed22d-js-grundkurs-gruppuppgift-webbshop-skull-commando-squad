@@ -14,7 +14,7 @@ function updateCart() {
   const totalPrice = document.querySelector(".total-price");
   let sum = 0;
   for (let i = 0; i < donuts.length; i++) {
-    sum = sum + donuts[i].sum;
+    sum = sum + Math.round(donuts[i].sum);
   }
 
   // kontrollerar om dagens datum är måndag innan kl 10, drar 10% och visar meddelande
@@ -26,9 +26,9 @@ function updateCart() {
 
 
   //variabel för totalsumman till bekräftelsen
-  totalSum = sum.toFixed(2);
+  totalSum = sum;
 
-  totalPrice.innerHTML = sum.toFixed(2) + " kr";
+  totalPrice.innerHTML = sum + " kr";
   const shoppingCartMenu = document.querySelector(".shopping-cart-object");
   shoppingCartMenu.innerHTML = "";
 
