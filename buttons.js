@@ -21,6 +21,10 @@ function createEventListeners() {
 // funktion för att addera antal munkar med plusknappen och
 function increaseCount(e) {
   const id = e.currentTarget.dataset.id;
+  const newAmount = donuts[id].amount + 1;
+  if (newAmount >= 10) {
+    donuts[id].price = getDonutPrice(donuts[id].originalPrice) * 1.1;
+  }
   donuts[id].amount = donuts[id].amount + 1;
   donuts[id].sum = donuts[id].amount * donuts[id].price;
 
