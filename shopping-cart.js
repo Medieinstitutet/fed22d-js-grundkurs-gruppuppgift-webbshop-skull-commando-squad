@@ -24,7 +24,6 @@ function updateCart() {
     document.querySelector(".rebate").style.display = "block";
   }
 
-
   //variabel för totalsumman till bekräftelsen
   totalSum = sum;
 
@@ -38,7 +37,9 @@ function updateCart() {
         shoppingCartMenu.innerHTML += `
         <div class="cart-info">
           <div class="cart-img">
-            <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+            <img src="${
+              donuts[i].img[0]
+            }" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
           </div>
           <div class="cart-item-name">
             ${donuts[i].name}
@@ -57,17 +58,23 @@ function updateCart() {
         shoppingCartMenu.innerHTML += `
         <div class="cart-info">
           <div class="cart-img">
-            <img src="${donuts[i].img[0]}" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
+            <img src="${
+              donuts[i].img[0]
+            }" width="50" height="50" loading="lazy" alt="${donuts[i].alt}"/>
           </div>
           <div class="cart-item-name">
             ${donuts[i].name}
           </div>
           <div class="cart-item-amount">
             ${donuts[i].amount} st
-            <button data-operator="minus" data-id="${i}" class="cart-minus-butn">
+            <button data-operator="minus" data-id="${
+              donuts[i].id
+            }" class="cart-minus-butn">
             -
             </button>
-            <button data-operator="plus" data-id="${i}" class="cart-plus-btn">
+            <button data-operator="plus" data-id="${
+              donuts[i].id
+            }" class="cart-plus-btn">
             +
             </button>
           </div>
@@ -75,7 +82,7 @@ function updateCart() {
             ${Math.round(donuts[i].sum)} kr
           </div>
           <div class="remove-cart-item">
-            <button data-id="${i}" class="remove-cart-item">
+            <button data-id="${donuts[i].id}" class="remove-cart-item">
               <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
           </div>

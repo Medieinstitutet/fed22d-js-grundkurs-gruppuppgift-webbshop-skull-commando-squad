@@ -9,19 +9,15 @@ const closeFormBtn = document.querySelector("#close-form");
 closeFormBtn.addEventListener("click", hideForm);
 const usageChecked = document.querySelector("#usage");
 const submitBtn = document.querySelector("#submit");
-const rebateCodeBtn = document.querySelector("#rebate-btn");
-rebateCodeBtn.addEventListener("click", freeStuff);
-
-function freeStuff() {
-  const input = document.querySelector("#rebate-code");
-  if (input.value === "a_damn_fine_cup_of_coffee") {
-    input.classList.add("rebate-ok");
-  } else {
-    input.classList.add("rebate-not-ok");
-  }
-}
 
 function showForm() {
+  if (totalSum > 800) {
+    invoiceRadio.classList.add("hidden");
+    document.getElementById("invoiceLabel").classList.add("hidden");
+  } else {
+    invoiceRadio.classList.remove("hidden");
+    document.getElementById("invoiceLabel").classList.remove("hidden");
+  }
   document.getElementById("order-form").classList.remove("hidden");
 }
 
@@ -47,20 +43,28 @@ document.querySelector("#form").addEventListener("submit", submit);
 
 function submit(e) {
   e?.preventDefault();
+  const rebateCodeInput = document.querySelector("#rebateCode");
   const summaryPage = document.getElementById("summaryPage");
   summaryPage.classList.remove("hidden");
   const deliveryTime = getDeliveryTime();
   const freightPrice = getFreightPrice();
   const rebates = getRebates();
-
-  document.querySelector("#summary-dynamic-content").innerHTML = ` 
-    <div class="delivery-info">
-      <h2>Tack för din beställning!</h2>
-      <p>Din order levereras inom: ${deliveryTime}
-      <p>Fraktkostnad: ${freightPrice.toFixed(2)} kr</p>
-      <p>Summa: ${(totalSum + freightPrice + rebates).toFixed(2)} kr</p>
-    </div>
-  `;
+  if (rebateCodeInput.value === "a_damn_fine_cup_of_coffee") {
+    document.querySelector(
+      "#summary-dynamic-content"
+    ).innerHTML = `<div class="delivery-info">
+    <h1>Grattis!!Dina munkar blev gratis.</h1>
+    <p>Din order levereras inom: ${deliveryTime}</p></div>`;
+  } else {
+    document.querySelector("#summary-dynamic-content").innerHTML = ` 
+  <div class="delivery-info">
+    <h2>Tack för din beställning!</h2>
+    <p>Din order levereras inom: ${deliveryTime}
+    <p>Fraktkostnad: ${freightPrice.toFixed(2)} kr</p>
+    <p>Summa: ${(totalSum + freightPrice + rebates).toFixed(2)} kr</p>
+  </div>
+`;
+  }
 }
 function getRebates() {
   const now = new Date();
