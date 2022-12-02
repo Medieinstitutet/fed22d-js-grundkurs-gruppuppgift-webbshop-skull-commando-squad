@@ -755,3 +755,4 @@ function getFreightPrice() {
 
 // kallar render donuts funktion
 renderDonuts();
+createEventListeners();
