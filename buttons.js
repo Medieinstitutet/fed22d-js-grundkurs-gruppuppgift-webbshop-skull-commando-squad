@@ -21,13 +21,13 @@ function createEventListeners() {
 // funktion för att addera antal munkar med plusknappen och
 function increaseCount(e) {
   const id = e.currentTarget.dataset.id;
-  const newAmount = donuts[id].amount + 1;
+  const donut = donuts.find((x) => x.id == id);
+  const newAmount = donut.amount + 1;
   if (newAmount >= 10) {
-    donuts[id].price = getDonutPrice(donuts[id].originalPrice) * 1.1;
+    donut.price = getDonutPrice(donut.originalPrice) * 0.9;
   }
-  donuts[id].amount = donuts[id].amount + 1;
-  donuts[id].sum = donuts[id].amount * donuts[id].price;
-
+  donut.amount = newAmount;
+  donut.sum = donut.amount * donut.price;
   renderDonuts();
   updateCart();
 }
@@ -35,11 +35,16 @@ function increaseCount(e) {
 // funktion för att minska antal munkar med minusknappen och uppdatera totalsumman
 function decreaseCount(e) {
   const id = e.currentTarget.dataset.id;
-  if (donuts[id].amount <= 0) {
+  const donut = donuts.find((x) => x.id == id);
+  if (donut.amount <= 0) {
     return;
   } else {
-    donuts[id].amount = donuts[id].amount - 1;
-    donuts[id].sum = donuts[id].amount * donuts[id].price;
+    const newAmount = donut.amount - 1;
+    if (newAmount < 10) {
+      donut.price = getDonutPrice(donut.originalPrice);
+    }
+    donut.amount = newAmount;
+    donut.sum = donut.amount * donut.price;
     renderDonuts();
     updateCart();
   }
@@ -48,8 +53,10 @@ function decreaseCount(e) {
 //funktion för att ta bort en artikel i varukorgen med hjälp av trash-ikon
 function removeCartItem(e) {
   const id = e.currentTarget.dataset.id;
-  donuts[id].amount = 0;
-  donuts[id].sum = 0;
+  const donut = donuts.find((x) => x.id == id);
+  donut.price = getDonutPrice(donut.originalPrice);
+  donut.amount = 0;
+  donut.sum = 0;
   renderDonuts();
   updateCart();
 }
