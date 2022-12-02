@@ -4,6 +4,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 header {
@@ -15,6 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 
   .gottfrid {
     display: flex;
@@ -64,6 +66,17 @@ main {
 .donut-info {
   line-height: 2;
   padding: 10px;
+}
+
+.donut-img {
+position: relative;
+}
+
+
+.donut-img button  {
+  display: flex;
+  justify-content: center;
+
 }
 
 [data-operator] {
