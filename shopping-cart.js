@@ -24,7 +24,7 @@ function updateCart() {
     document.querySelector(".rebate").style.display = "block";
   }
   //variabel för totalsumman till bekräftelsen
-  totalSum = sum;
+  totalSum = sum.toFixed(2);
 
   totalPrice.innerHTML = sum.toFixed(2) + " kr";
   const shoppingCartMenu = document.querySelector(".shopping-cart-object");
