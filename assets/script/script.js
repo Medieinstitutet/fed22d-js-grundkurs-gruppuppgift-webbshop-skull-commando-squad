@@ -507,6 +507,7 @@ function increaseCount(e) {
   }
   donut.amount = newAmount;
   donut.sum = donut.amount * donut.price;
+  console.log("click");
   renderDonuts();
   updateCart();
 }
@@ -755,4 +756,3 @@ function getFreightPrice() {
 
 // kallar render donuts funktion
 renderDonuts();
-createEventListeners();
