@@ -69,12 +69,23 @@
     width: 100%;
     text-align: center;
     transition: 0.5s;
-    background-color: #dcc4bc;
+    background-color: #f6f5ec;
     outline: 1px solid black;
   }
 
   .sort-nav-menu.active {
     left: 0;
     visibility: visible;
+  }
+}
+.sort-nav {
+  .nameSortStart,
+  .nameSortEnd,
+  .priceSortStart,
+  .priceSortEnd,
+  .ratingSortStart,
+  .ratingSortEnd {
+    border: none;
+    background-color: #f6f5ec
   }
 }
