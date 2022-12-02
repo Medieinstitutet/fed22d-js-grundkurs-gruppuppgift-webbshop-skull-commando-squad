@@ -219,8 +219,7 @@ function isLucia() {
   return dateNow.getDate() === lucia.getDate();
 }
 
-let rated = donuts.rating;
-console.log([donuts.rating]);
+
 
 // funktion för att skriva ut munkar i HTML
 function renderDonuts() {
