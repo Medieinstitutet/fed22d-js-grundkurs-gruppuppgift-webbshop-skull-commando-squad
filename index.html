@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A E-shop site for donuts" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Donuts, E-shop" />
+    <meta
+      name="author"
+      content="Robin Sevelin, Sebasitan Post, Veronica Bergström"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gottfrids munkfabrik</title>
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="gottfrid">
+        <h1>Gottfrids munkshop</h1>
+      </div>
+      <button class="shopping-cart" aria-label="shopping-cart-button">
+        <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+        <span class="items-in-cart">0</span>
+      </button>
+      <section class="shopping-cart-menu">
+        <h2>Varukorg</h2>
+        <hr />
+        <div class="shopping-cart-object">Din varukorg är tom</div>
+        <div class="checkout-order">
+          Total summa: <span class="total-price">0 kr</span>
+          <div class="rebate">Måndagsrabatt: 10 % på hela beställningen!</div>
+          <button
+            class="submit-order"
+            id="showForm"
+            aria-label="sumbit-order-button"
+          >
+            Gå till kassan
+          </button>
+        </div>
+      </section>
+
+      <!--hamburger start-->
+      <nav class="sort-nav">
+        <ul class="sort-nav-menu">
+          <li class="nav-item-sort">
+            <button
+              class="nameSortStart"
+              aria-label="button-sorting-by-name-a-ö"
+            >
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i> a-ö
+            </button>
+          </li>
+          <li class="nav-item-sort">
+            <button class="nameSortEnd" aria-label="button-sorting-by-name-ö-a">
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i> ö-a
+            </button>
+          </li>
+          <li class="nav-item-sort">
+            <button
+              class="priceSortStart"
+              aria-label="button-sorting-by-price-descending"
+            >
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i> pris
+            </button>
+          </li>
+          <li class="nav-item-sort">
+            <button
+              class="priceSortEnd"
+              aria-label="button-sorting-by-price-ascending"
+            >
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i> pris
+            </button>
+          </li>
+          <li class="nav-item-sort">
+            <button
+              class="ratingSortStart"
+              aria-label="button-sorting-by-rating-descending"
+            >
+              <i class="fa fa-arrow-down" aria-hidden="true"> </i> rating
+            </button>
+          </li>
+          <li class="nav-item-sort">
+            <button
+              class="ratingSortEnd"
+              aria-label="button-sorting-by-rating-ascending"
+            >
+              <i class="fa fa-arrow-up" aria-hidden="true"> </i> rating
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="hambuger-menu-button">
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+        </button>
+      </nav>
+      <!--hamburger ends-->
+    </header>
+    <div id="filter-search">
+      <div class="filter">
+        <label>
+          <input type="radio" name="categoryFilter" value="tasty" />
+          Goda munkar
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="meat" />
+          Kött munkar
+        </label>
+        <label>
+          <input type="radio" name="categoryFilter" value="plant" />
+          Växt munkar </label
+        ><br />
+        <label>
+          <input type="radio" name="categoryFilter" value="all" checked />
+          Visa alla
+        </label>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <label>
+        <span>Pris intervall</span>
+        <span class="flex">
+          <span>0 kr</span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            id="priceRange"
+            step="5"
+          />
+          <span>100 kr</span>
+        </span>
+        <span id="currentRangeValue">, 100</span> kr
+      </label>
+    </div>
+    <!---Formulär-->
+    <aside id="order-form" class="hidden">
+      <div class="formsWrapper">
+        <h2 class="form-headline">Fyll i dina personuppgifter</h2>
+        <form id="form">
+          <label for="fname"
+            >Förnamn: <span class="req">*</span>
+            <input type="text" required id="fname" placeholder="Förnamn"
+          /></label>
+
+          <label for="lname"
+            >Efternamn: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="lname"
+              name="lname"
+              placeholder="Efternamn"
+          /></label>
+
+          <label for="adress"
+            >Adress: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="adress"
+              name="adresse"
+              placeholder="Adress"
+          /></label>
+
+          <label for="postnummer"
+            >Postnummer: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="postnummer"
+              name="zipcode"
+              placeholder="Postnummer"
+          /></label>
+
+          <label for="stad"
+            >Stad: <span class="req">*</span>
+            <input
+              type="text"
+              required
+              id="stad"
+              name="city"
+              placeholder="Stad"
+          /></label>
+
+          <label for="phone"
+            >Telefonnummer: <span class="req">*</span>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="07XXXXXXXX"
+              required
+              minlength="10"
+              maxlength="12"
+          /></label>
+
+          <label for="email"
+            >E-post: <span class="req">*</span>
+            <input type="email" required id="email" placeholder="E-post" /><br
+          /></label>
+
+          <label for="rebateCode"
+            >Fyll i din rabattkod:
+            <input
+              type="text"
+              id="rebateCode"
+              name="rebateCode"
+              placeholder="Rabattkod"
+            />
+          </label>
+
+          <h3>Välj betalsätt</h3>
+          <input
+            type="radio"
+            id="cardRadio"
+            name="payMethod"
+            value="Kort"
+            class="cardButton"
+          />
+
+          <label for="cardRadio">Kort</label>
+          <!--Kortdetaljer Ligger hidden, dyker upp om man markerar "Kort" i radio buttons-->
+          <div class="cardDetails" id="cardDetails">
+            <label for="cardNumber"
+              >Kortnummer:
+              <input
+                type="text"
+                id="cardNumber"
+                name="ccInfo"
+                placeholder="Kortnummer"
+              />
+            </label>
+
+            <label for="yearMonth"
+              >Giltighetstid:
+              <input
+                type="text"
+                id="yearMonth"
+                name="ccInfo"
+                placeholder="År/månad"
+              />
+            </label>
+
+            <label for="cvc"
+              >cvc/cvv:
+              <input
+                type="text"
+                id="cvc"
+                name="ccInfo"
+                placeholder="Kortnummer"
+              />
+            </label>
+          </div>
+          <br />
+          <!--Fortsättning på formuläret som är synligt-->
+          <input
+            type="radio"
+            id="invoiceRadio"
+            name="payMethod"
+            value="Faktura"
+          />
+          <label id="invoiceLabel" for="invoiceRadio">Faktura</label><br />
+          <div class="invoiceDetails" id="invoiceDetails">
+            <label for="persnr"
+              >Fyll i ditt personnummer: <span class="req">*</span>
+              <input
+                type="text"
+                id="persnr"
+                name="persnr"
+                placeholder="XXXXXX-XXXX"
+                minlength="11"
+                maxlength="13"
+            /></label>
+          </div>
+          <label for="reklam">Vill du prenumerera på vårt nyhetsbrev?</label>
+          <input type="checkbox" id="reklam" name="newsLetter" checked /><br />
+          <label for="usage"
+            >Klicka här för att godkänna
+            <a href="#">användarvillkoren</a></label
+          >
+          <input type="checkbox" required id="usage" name="usage" />
+          <br />
+          <input type="reset" value="Rensa formulär" />
+          <input type="submit" id="submit" class="pay-button" value="Betala" />
+        </form>
+        <button class="close-form-btn" id="close-form">Stäng formulär</button>
+      </div>
+    </aside>
+    <div class="hidden" id="summaryPage">
+      <div id="summary-dynamic-content"></div>
+    </div>
+    <main>
+      <section class="donutContainer"></section>
+    </main>
+    <script src="assets/script/script.js"></script>
+  </body>
+</html>
