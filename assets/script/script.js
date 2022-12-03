@@ -476,6 +476,7 @@ function renderDonuts() {
       btn.addEventListener("click", changePic);
     });
   }
+  createEventListeners();
 }
 
 // funktion för eventlyssnare på knapparna
