@@ -471,6 +471,7 @@ function renderDonuts() {
     //Knappfunktioner
     prevBtn.forEach((btn) => {
       btn.addEventListener("click", changePic);
+      console.log("click");
     });
     nextBtn.forEach((btn) => {
       btn.addEventListener("click", changePic);
@@ -508,7 +509,6 @@ function increaseCount(e) {
   }
   donut.amount = newAmount;
   donut.sum = donut.amount * donut.price;
-  console.log("click");
   renderDonuts();
   updateCart();
 }
