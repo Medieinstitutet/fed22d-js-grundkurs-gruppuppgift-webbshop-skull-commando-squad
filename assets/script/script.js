@@ -246,9 +246,7 @@ sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
 sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
 
 createEventListeners();
-//Deklarerar knapparna till slidern
-const prevBtn = document.querySelectorAll(".prevBtn");
-const nextBtn = document.querySelectorAll(".nextBtn");
+
 
 // skapar en klick funktion till hamburger och menu för att aktiveras
 function openMenu() {
@@ -451,7 +449,10 @@ function renderDonuts() {
           </div>
         </div>
     `;
-
+    //Deklarerar knapparna till slidern
+    const prevBtn = document.querySelectorAll(".prevBtn");
+    const nextBtn = document.querySelectorAll(".nextBtn");
+    
     //Funktion för att byta bild i karusellen
     function changePic(e) {
       const i = e.currentTarget.id
