@@ -115,7 +115,7 @@ const donuts = [
     rating: 1,
     amount: 0,
     sum: 0,
-    img: ["assets/img/water-cress.png", "assets/img/cress-donut-2.png"],
+    img: ["assets/img/water-cress.png", "assets/img/cress-donut-2.jpeg"],
     alt: ["green donut made of cress", "green donut made of cress"],
     description: "Pepprig och fräsch",
     category: ["plant", "all"],
@@ -246,7 +246,6 @@ sortByPriceBtnStart.addEventListener("click", sortByPriceStart);
 sortByPriceBtnEnd.addEventListener("click", sortByPriceEnd);
 
 createEventListeners();
-
 
 // skapar en klick funktion till hamburger och menu för att aktiveras
 function openMenu() {
@@ -452,7 +451,7 @@ function renderDonuts() {
     //Deklarerar knapparna till slidern
     const prevBtn = document.querySelectorAll(".prevBtn");
     const nextBtn = document.querySelectorAll(".nextBtn");
-    
+
     //Funktion för att byta bild i karusellen
     function changePic(e) {
       const i = e.currentTarget.id
