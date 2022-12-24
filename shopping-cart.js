@@ -23,6 +23,8 @@ function updateCart() {
     sum = sum * 0.9;
     document.querySelector(".rebate").style.display = "block";
   }
+
+
   //variabel för totalsumman till bekräftelsen
   totalSum = sum.toFixed(2);
 
@@ -45,7 +47,7 @@ function updateCart() {
             ${donuts[i].amount} st
           </div>
           <div class="cart-item-sum"> 
-            ${donuts[i].sum} kr
+            ${Math.round(donuts[i].sum)} kr
           </div>
           <div class="remove-cart-item">
           </div>
@@ -70,7 +72,7 @@ function updateCart() {
             </button>
           </div>
           <div class="cart-item-sum"> 
-            ${donuts[i].sum} kr
+            ${Math.round(donuts[i].sum)} kr
           </div>
           <div class="remove-cart-item">
             <button data-id="${i}" class="remove-cart-item">

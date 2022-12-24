@@ -241,15 +241,17 @@ function renderDonuts() {
           <div class="donut-img">
             <img id="imageOne-${i}" src="${donut.img[0]}" width="200" height="200" loading="lazy" alt="${donut.alt[0]}"/>
             <img id="imageTwo-${i}" src="${donut.img[1]}" width="200" height="200" loading="lazy" class="hidden" alt="${donut.alt[1]}"/><br>
-            <button class="prevBtn" id="prevBtn-${i}">Föregående</button>
-            <button class="nextBtn" id="nextBtn-${i}">Nästa</button>
+            <div class="donutButtons">
+            <button class="prevBtn material-symbols-outlined" id="prevBtn-${i}">arrow_back_ios</button>
+            <button class="nextBtn material-symbols-outlined" id="nextBtn-${i}">arrow_forward_ios</button>
+            </div>
           </div>
           <div class="donut-info">
             <p>Betyg: ${rating}</p>
              <span>${donut.description}</span><br/>
-             Pris/st: <span class="${priceClasses}">${donut.price}</span> kr<br />
+             Pris/st: <span class="${priceClasses}">${Math.round(donut.price)}</span> kr<br />
               Antal i varukorgen: <span class="amount">${donut.amount}</span> st<br/>
-              Summa: <span class="sum">${donut.sum}</span> kr<br />
+              Summa: <span class="sum">${Math.round(donut.sum)}</span> kr<br />
             <button data-operator="minus" data-id="${donut.id}" aria-label="button for decreasing donut">-</button>
             <button data-operator="plus" data-id="${donut.id}" aria-label="button for increasing donut">+</button>
           </div>
